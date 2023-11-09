@@ -3,7 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ButtonModule } from 'primeng/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from '../app/login/login.component'
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +15,8 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     ButtonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
