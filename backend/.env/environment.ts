@@ -1,1 +1,1 @@
-const OPENAI_API_KEY="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"
+const OPENAI_API_KEY="SecretKey"
