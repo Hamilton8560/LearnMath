@@ -1,4 +1,48 @@
 <div>
-<p-button (click)="onClick()" label="Start"></p-button>
 
+    <div *ngIf="!isAccountCreate" class="content">
+<div class="container">
+<p-card header="Login">
+    <p>
+        or 
+        <a href="#" *ngIf="!isAccountCreate" (click)="createAccount()" style="color:black">Create New Account</a>
+       
+      </p>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+<div class="card flex justify-content-center">
+    <input type="email" placeholder="Email" pInputText formControlName="email"/>
+
+    <input type="password" placeholder="password" pInputText formControlName="password"/>
+</div>
+<p-button label="Log in" type="submit"></p-button>
+        
+      </form>
+      
+</p-card>
+</div>
+</div>
+<div *ngIf="isAccountCreate" class="content">
+    <div class="container">
+    <p-card header="Sign Up">
+        <p>
+            or 
+            <a href="" *ngIf="isAccountCreate" (click)="createAccount()" style="color:black">Login To Existing Account</a>
+           
+          </p>
+          <form [formGroup]="registerForm" (ngSubmit)="createAccount()">
+    
+    <div class="card flex justify-content-center">
+        <input type="email" placeholder="Email" pInputText formControlName="email"/>
+    
+        <input type="password" placeholder="Password" pInputText formControlName="password"/>
+        <input type="password" placeholder="Confirm Password" pInputText formControlName="passwordConfirm"/>
+    </div>
+    <p-button label="Sign Up" type="submit"></p-button>
+            
+          </form>
+          
+    </p-card>
+    </div>
+    </div>
 </div>

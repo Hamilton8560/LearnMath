@@ -1,0 +1,39 @@
+.content{
+    display: flex;
+    justify-content: center; /* aligns children (the div) horizontally */
+    align-items:center;
+    height:100vh;
+}
+.container{
+    text-align: center;
+    border-radius: 5px;
+    height: 200px;
+    width: 400px;
+    
+
+}
+.container1{
+
+}
+:host ::ng-deep .p-button{
+    margin-top: 15px;
+    background-color:#4281B3;
+    
+}
+:host ::ng-deep .p-button:hover{
+    background-color: #3b6281;
+}
+:host ::ng-deep .p-card {
+    
+    background-color: #EEEBEB;
+}
+
+input[type="email"], 
+input[type="password"] {
+    width: 250px;
+
+}
+
+.card input{
+    margin:5px;
+}
