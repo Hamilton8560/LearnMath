@@ -49,8 +49,8 @@ def get_questions_data():
                     (
                         data["difficulty"], 
                         str(v['type']), 
-                        str(list(str(i) for i in v['question'])), 
-                        str(v['options']), 
+                        str(v['question']), 
+                        str(list(str(i) for i in v['options'])), 
                         str(v['answer'])
                 ))
             seen.add(v["question"]) 

@@ -84,6 +84,7 @@ def get_questions():
     logger.info("[%s] /api/calls/questions - performing questions operations..", str(request.method))
     try:
         # extract data, validate email
+        logger.info(request.data)
         data = json.loads(request.data)
 
         if "email" not in data:
@@ -168,8 +169,8 @@ def get_questions():
                 raise HTTPError("Invalid request, answer value must be type boolean.")
             
             # get answers ID
-            cur.execute("SELECT ID FROM questions WHERE LOWER(?) LIKE LOWER(?)"
-                ("%{}%".format(data["question"])))
+            cur.execute("SELECT ID FROM questions WHERE LOWER(problem) LIKE LOWER(?);",
+                ("%{}%".format(data["question"]),))
             question = cur.fetchone()
             if not question:
                 raise MathFlexOperationError("Unable to locate question within database")
