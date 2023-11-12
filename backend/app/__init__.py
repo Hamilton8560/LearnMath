@@ -1,7 +1,7 @@
 from flask import Flask, make_response, jsonify, Response
 from flask_cors import cross_origin
 import sqlite3
-import logging
+import os
 
 from app.lib.helper import setup_logging, dict_factory, db_health_check
 
@@ -9,7 +9,8 @@ app = Flask(__name__)
 
 with app.app_context():
     # init database connection
-    conn = sqlite3.connect("mathflex.db", check_same_thread=False)
+    db_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "mathflex.db")
+    conn = sqlite3.connect(db_path, check_same_thread=False)
     cur = conn.cursor()
     cur.row_factory = dict_factory
 
@@ -56,5 +57,3 @@ def after_request(response:Response):
         logger.exception(e)
     
     return response
-
-
