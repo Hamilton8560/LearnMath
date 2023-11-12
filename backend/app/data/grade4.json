@@ -2,284 +2,214 @@
   "difficulty": 4,
   "questions": [
     {
-      
-      "question": "What is the sum of 486 and 237?",
-      "options": ["713", "723", "733", "743"],
-      "answer": "723",
+      "question": "What is the sum of 265 and 387?",
+      "options": ["621", "652", "652", "652"],
+      "answer": "652",
       "type": "addition"
     },
     {
-      
-      "question": "If you have 854 candies and eat 389, how many candies do you have left?",
-      "options": ["465", "475", "485", "495"],
-      "answer": "465",
-      "type": "subtraction"
-    },
-    {
-      
-      "question": "How many groups of 8 are there in 368?",
-      "options": ["42", "46", "50", "54"],
-      "answer": "46",
-      "type": "division"
-    },
-    {
-      
-      "question": "What is the product of 9 and 7?",
-      "options": ["58", "63", "72", "81"],
-      "answer": "63",
+      "question": "If a rectangle has a length of 14 units and a width of 8 units, what is its area?",
+      "options": ["92 sq units", "112 sq units", "120 sq units", "168 sq units"],
+      "answer": "112 sq units",
       "type": "multiplication"
     },
     {
-      
-      "question": "If you have 976 toys and give 387 to your friend, how many toys do you have left?",
-      "options": ["589", "599", "609", "619"],
-      "answer": "589",
+      "question": "Subtract 148 from 520.",
+      "options": ["372", "382", "392", "402"],
+      "answer": "372",
       "type": "subtraction"
     },
     {
-      
-      "question": "How many groups of 6 are there in 354?",
-      "options": ["56", "58", "60", "62"],
-      "answer": "59",
-      "type": "division"
-    },
-    {
-      
-      "question": "What is the sum of 547 and 318?",
-      "options": ["865", "875", "885", "895"],
-      "answer": "865",
-      "type": "addition"
-    },
-    {
-      
-      "question": "If you have 684 apples and get 235 more, how many apples do you have?",
-      "options": ["899", "909", "919", "929"],
-      "answer": "919",
-      "type": "addition"
-    },
-    {
-      
-      "question": "How many groups of 7 are there in 406?",
-      "options": ["58", "60", "62", "64"],
-      "answer": "58",
-      "type": "division"
-    },
-    {
-      
-      "question": "What is the product of 8 and 6?",
-      "options": ["44", "52", "58", "64"],
-      "answer": "48",
+      "question": "Which of the following expressions represents the product of 6 and 9?",
+      "options": ["6 + 9", "6 - 9", "6 × 9", "6 ÷ 9"],
+      "answer": "6 × 9",
       "type": "multiplication"
     },
     {
-      
-      "question": "If you have 789 cookies and eat 356, how many cookies do you have left?",
-      "options": ["433", "443", "453", "463"],
-      "answer": "433",
-      "type": "subtraction"
-    },
-    {
-      
-      "question": "How many groups of 5 are there in 475?",
-      "options": ["85", "90", "95", "100"],
-      "answer": "95",
-      "type": "division"
-    },
-    {
-      
-      "question": "What is the sum of 568 and 345?",
-      "options": ["913", "923", "933", "943"],
-      "answer": "913",
+      "question": "If a box contains 7 red apples and 4 green apples, what is the total number of apples?",
+      "options": ["8", "10", "11", "13"],
+      "answer": "11",
       "type": "addition"
     },
     {
-      
-      "question": "If you have 678 candies and give 289 to your friend, how many candies do you have left?",
-      "options": ["389", "399", "409", "419"],
-      "answer": "389",
-      "type": "subtraction"
-    },
-    {
-      
-      "question": "How many groups of 9 are there in 819?",
-      "options": ["89", "91", "93", "95"],
-      "answer": "91",
+      "question": "Calculate the value of 45 ÷ 5.",
+      "options": ["7", "8", "9", "10"],
+      "answer": "9",
       "type": "division"
     },
     {
-      
-      "question": "What is the product of 7 and 5?",
-      "options": ["32", "35", "42", "49"],
-      "answer": "35",
+      "question": "If a clock shows 2:30, what is the difference in minutes between the hour and minute hands?",
+      "options": ["30", "45", "60", "75"],
+      "answer": "30",
+      "type": "subtraction"
+    },
+    {
+      "question": "Add 3/5 and 2/5.",
+      "options": ["1/5", "3/5", "5/5", "4/5"],
+      "answer": "5/5",
+      "type": "addition"
+    },
+    {
+      "question": "If a triangle has sides of length 8 cm, 15 cm, and 17 cm, what type of triangle is it?",
+      "options": ["Equilateral", "Isosceles", "Scalene", "Right-angled"],
+      "answer": "Right-angled",
+      "type": "classification"
+    },
+    {
+      "question": "What is the value of 8 squared?",
+      "options": ["48", "64", "72", "81"],
+      "answer": "64",
+      "type": "exponentiation"
+    },
+    {
+      "question": "If a bag contains 20 marbles and 1/4 of them are blue, how many marbles are blue?",
+      "options": ["4", "5", "10", "15"],
+      "answer": "5",
       "type": "multiplication"
     },
     {
-      
-      "question": "If you have 876 toys and give 324 to your friend, how many toys do you have left?",
-      "options": ["552", "562", "572", "582"],
-      "answer": "552",
+      "question": "Calculate 4 × (6 + 2).",
+      "options": ["24", "32", "40", "48"],
+      "answer": "32",
+      "type": "combination"
+    },
+    {
+      "question": "Which of the following numbers is prime?",
+      "options": ["12", "17", "20", "25"],
+      "answer": "17",
+      "type": "classification"
+    },
+    {
+      "question": "If a square has a side length of 12 units, what is its perimeter?",
+      "options": ["36 units", "42 units", "48 units", "54 units"],
+      "answer": "48 units",
+      "type": "addition"
+    },
+    {
+      "question": "Which of the following numbers is divisible by both 4 and 6?",
+      "options": ["18", "24", "30", "36"],
+      "answer": "24",
+      "type": "classification"
+    },
+    {
+      "question": "If a number is rounded to the nearest hundred and is 700, what is the possible range of values for the original number?",
+      "options": ["600-700", "650-750", "700-800", "750-850"],
+      "answer": "650-750",
+      "type": "rounding"
+    },
+    {
+      "question": "Calculate 15 ÷ 3 + 2.",
+      "options": ["3", "7", "8", "9"],
+      "answer": "7",
+      "type": "combination"
+    },
+    {
+      "question": "If a bag contains 30 candies and 2/3 of them are chocolate, how many candies are chocolate?",
+      "options": ["10", "15", "20", "25"],
+      "answer": "20",
+      "type": "multiplication"
+    },
+    {
+      "question": "What is the product of 7 and 6?",
+      "options": ["38", "42", "45", "48"],
+      "answer": "42",
+      "type": "multiplication"
+    },
+    {
+      "question": "If a circle has a radius of 5 cm, what is its circumference? (Use π ≈ 3.14)",
+      "options": ["15.7 cm", "18.85 cm", "31.4 cm", "47.1 cm"],
+      "answer": "31.4 cm",
+      "type": "multiplication"
+    },
+    {
+      "question": "Subtract 4/9 from 1 whole.",
+      "options": ["1/9", "5/9", "7/9", "8/9"],
+      "answer": "5/9",
       "type": "subtraction"
     },
     {
-      
-      "question": "How many groups of 6 are there in 456?",
-      "options": ["76", "78", "80", "82"],
-      "answer": "76",
-      "type": "division"
+      "question": "If a triangle has angles measuring 60 degrees, 60 degrees, and 60 degrees, what type of triangle is it?",
+      "options": ["Equilateral", "Isosceles", "Scalene", "Right-angled"],
+      "answer": "Equilateral",
+      "type": "classification"
     },
     {
-      
-      "question": "What is the sum of 678 and 345?",
-      "options": ["1023", "1033", "1043", "1053"],
-      "answer": "1023",
-      "type": "addition"
+      "question": "What is the value of 4 cubed?",
+      "options": ["48", "64", "72", "108"],
+      "answer": "64",
+      "type": "exponentiation"
     },
     {
-      
-      "question": "If you have 765 apples and get 328 more, how many apples do you have?",
-      "options": ["1093", "1103", "1113", "1123"],
-      "answer": "1093",
-      "type": "addition"
+      "question": "If a box contains 12 red balls, 8 blue balls, and 5 green balls, what fraction represents the blue balls?",
+      "options": ["1/3", "2/5", "4/25", "8/25"],
+      "answer": "2/5",
+      "type": "fraction"
     },
     {
-      
-      "question": "What is the result of 124 + 356?",
-      "options": ["480", "490", "500", "510"],
-      "answer": "480",
-      "type": "addition"
+      "question": "Calculate 17 + 25 - 8.",
+      "options": ["26", "34", "38", "42"],
+      "answer": "34",
+      "type": "combination"
     },
     {
-      
-      "question": "If you have 428 cookies and eat 235, how many cookies do you have left?",
-      "options": ["193", "203", "213", "223"],
-      "answer": "193",
-      "type": "subtraction"
-    },
-    {
-      
-      "question": "How many groups of 5 are there in 350?",
-      "options": ["70", "72", "74", "76"],
-      "answer": "70",
-      "type": "division"
-    },
-    {
-      
-      "question": "What is the product of 6 and 9?",
-      "options": ["48", "52", "54", "60"],
+      "question": "Which of the following numbers is a multiple of both 9 and 12?",
+      "options": ["36", "54", "63", "72"],
       "answer": "54",
+      "type": "classification"
+    },
+    {
+      "question": "If a bag contains 25 marbles and 1/5 of them are yellow, how many marbles are yellow?",
+      "options": ["3", "5", "7", "10"],
+      "answer": "5",
       "type": "multiplication"
     },
     {
-      
-      "question": "If you have 987 toys and give 428 to your friend, how many toys do you have left?",
-      "options": ["559", "569", "579", "589"],
-      "answer": "559",
-      "type": "subtraction"
-    },
-    {
-      
-      "question": "How many groups of 3 are there in 237?",
-      "options": ["79", "81", "83", "85"],
-      "answer": "79",
-      "type": "division"
-    },
-    {
-      
-      "question": "What is the sum of 675 and 418?",
-      "options": ["1093", "1103", "1113", "1123"],
-      "answer": "1093",
+      "question": "What is the sum of 5/8 and 3/8?",
+      "options": ["4/8", "5/8", "8/8", "10/8"],
+      "answer": "8/8",
       "type": "addition"
     },
     {
-      
-      "question": "If you have 764 apples and get 328 more, how many apples do you have?",
-      "options": ["1092", "1102", "1112", "1122"],
-      "answer": "1092",
+      "question": "If a rectangle has a length of 10 units and a width of 6 units, what is its perimeter?",
+      "options": ["20 units", "26 units", "32 units", "36 units"],
+      "answer": "32 units",
       "type": "addition"
     },
     {
-      
-      "question": "How many groups of 4 are there in 468?",
-      "options": ["117", "119", "121", "123"],
-      "answer": "117",
-      "type": "division"
+      "question": "Which of the following numbers is a prime factor of 30?",
+      "options": ["3", "5", "7", "9"],
+      "answer": "5",
+      "type": "classification"
     },
     {
-      
-      "question": "What is the product of 8 and 6?",
-      "options": ["44", "52", "58", "64"],
-      "answer": "48",
+      "question": "If a triangle has angles measuring 90 degrees, 45 degrees, and 45 degrees, what type of triangle is it?",
+      "options": ["Equilateral", "Isosceles", "Scalene", "Right-angled"],
+      "answer": "Isosceles",
+      "type": "classification"
+    },
+    {
+      "question": "What is the value of 9 squared?",
+      "options": ["72", "81", "90", "99"],
+      "answer": "81",
+      "type": "exponentiation"
+    },
+    {
+      "question": "If a bag contains 18 apples and 2/3 of them are green, how many apples are green?",
+      "options": ["6", "8", "10", "12"],
+      "answer": "12",
       "type": "multiplication"
     },
     {
-      
-      "question": "If you have 892 cookies and eat 345, how many cookies do you have left?",
-      "options": ["547", "557", "567", "577"],
-      "answer": "547",
-      "type": "subtraction"
+      "question": "Calculate 14 ÷ 2 + 5.",
+      "options": ["10", "12", "14", "16"],
+      "answer": "12",
+      "type": "combination"
     },
     {
-      
-      "question": "How many groups of 7 are there in 602?",
-      "options": ["86", "88", "90", "92"],
-      "answer": "86",
-      "type": "division"
-    },
-    {
-      
-      "question": "What is the sum of 756 and 289?",
-      "options": ["1045", "1055", "1065", "1075"],
-      "answer": "1045",
-      "type": "addition"
-    },
-    {
-      
-      "question": "If you have 974 candies and give 345 to your friend, how many candies do you have left?",
-      "options": ["629", "639", "649", "659"],
-      "answer": "629",
-      "type": "subtraction"
-    },
-    {
-      
-      "question": "How many groups of 8 are there in 736?",
-      "options": ["92", "94", "96", "98"],
-      "answer": "92",
-      "type": "division"
-    },
-    {
-      
-      "question": "What is the product of 9 and 7?",
-      "options": ["54", "63", "72", "81"],
-      "answer": "63",
-      "type": "multiplication"
-    },
-    {
-      
-      "question": "If you have 798 toys and give 327 to your friend, how many toys do you have left?",
-      "options": ["471", "481", "491", "501"],
-      "answer": "471",
-      "type": "subtraction"
-    },
-    {
-      
-      "question": "How many groups of 5 are there in 550?",
-      "options": ["110", "112", "114", "116"],
-      "answer": "110",
-      "type": "division"
-    },
-    {
-      
-      "question": "What is the sum of 678 and 357?",
-      "options": ["1035", "1045", "1055", "1065"],
-      "answer": "1035",
-      "type": "addition"
-    },
-    {
-      
-      "question": "If you have 564 apples and get 245 more, how many apples do you have?",
-      "options": ["799", "809", "819", "829"],
-      "answer": "809",
-      "type": "addition"
+      "question": "If a number is rounded to the nearest ten and is 68, what is the possible range of values for the original number?",
+      "options": ["60-70", "65-75", "70-80", "75-85"],
+      "answer": "65-75",
+      "type": "rounding"
     }
   ]
 }
