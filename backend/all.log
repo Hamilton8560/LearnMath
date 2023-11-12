@@ -272,3 +272,10 @@ KeyError: 'endpoint'
 [2023-11-11 21:47:06,494] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
 [2023-11-11 21:50:21,331] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
 [2023-11-11 21:59:45,805] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-12 09:53:44,132] {/home/cosgran/workspace/LearnMath/backend/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-12 09:53:44,210] {/home/cosgran/workspace/LearnMath/backend/app/lib/helper.py:72} WARNING - Table users not found within database - generated empty table with no data.
+[2023-11-12 09:53:44,288] {/home/cosgran/workspace/LearnMath/backend/app/lib/helper.py:101} WARNING - Table %s empty - auto-populated with user=foo.bar@email.com, pw=Test123!
+[2023-11-12 09:53:44,391] {/home/cosgran/workspace/LearnMath/backend/app/lib/helper.py:72} WARNING - Table questions not found within database - generated empty table with no data.
+[2023-11-12 09:53:44,482] {/home/cosgran/workspace/LearnMath/backend/app/lib/helper.py:92} WARNING - Table questions empty - auto-populated with 226 questions: [{'level': 1, 'count()': 37}, {'level': 2, 'count()': 39}, {'level': 3, 'count()': 16}, {'level': 4, 'count()': 10}, {'level': 5, 'count()': 36}, {'level': 6, 'count()': 32}, {'level': 7, 'count()': 24}, {'level': 8, 'count()': 32}]
+[2023-11-12 09:53:44,570] {/home/cosgran/workspace/LearnMath/backend/app/lib/helper.py:72} WARNING - Table users_questions not found within database - generated empty table with no data.
+[2023-11-12 09:53:44,697] {/home/cosgran/workspace/LearnMath/backend/app/__init__.py:21} INFO - DB and logging setup
