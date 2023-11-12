@@ -1,0 +1,197 @@
+{
+    "difficulty": 6,
+  "questions": [
+    {
+      "type": "addition",
+      "question": "Calculate the sum of 789 and 456.",
+      "options": ["1245", "1246", "1245", "1245"],
+      "answer": "1245"
+    },
+    {
+      "type": "addition",
+      "question": "If there are 623 students in one school and 287 in another, how many students are there in total?",
+      "options": ["910", "910", "920", "910"],
+      "answer": "910"
+    },
+    {
+      "type": "addition",
+      "question": "Solve: 541 + 368.",
+      "options": ["909", "909", "909", "909"],
+      "answer": "909"
+    },
+    {
+      "type": "addition",
+      "question": "The sum of 879 and 324 is?",
+      "options": ["1203", "1204", "1203", "1203"],
+      "answer": "1203"
+    },
+    {
+      "type": "subtraction",
+      "question": "What is the result of 543 - 219?",
+      "options": ["324", "324", "324", "324"],
+      "answer": "324"
+    },
+    {
+      "type": "subtraction",
+      "question": "If a car travels 458 miles and then another 212 miles, how many miles has it traveled in total?",
+      "options": ["670", "670", "680", "670"],
+      "answer": "670"
+    },
+    {
+      "type": "subtraction",
+      "question": "Solve: 765 - 398.",
+      "options": ["367", "368", "367", "367"],
+      "answer": "367"
+    },
+    {
+      "type": "subtraction",
+      "question": "The difference between 628 and 295 is?",
+      "options": ["333", "343", "333", "333"],
+      "answer": "333"
+    },
+    {
+      "type": "multiplication",
+      "question": "What is the product of 27 and 19?",
+      "options": ["513", "523", "513", "513"],
+      "answer": "513"
+    },
+    {
+      "type": "multiplication",
+      "question": "If a garden has 14 rows of flowers, and each row has 9 flowers, how many flowers are there in total?",
+      "options": ["126", "136", "126", "126"],
+      "answer": "126"
+    },
+    {
+      "type": "multiplication",
+      "question": "Solve: 38 x 14.",
+      "options": ["532", "542", "532", "532"],
+      "answer": "532"
+    },
+    {
+      "type": "multiplication",
+      "question": "The product of 19 and 41 is?",
+      "options": ["779", "789", "779", "779"],
+      "answer": "779"
+    },
+    {
+      "type": "division",
+      "question": "What is the quotient of 945 divided by 15?",
+      "options": ["63", "65", "63", "63"],
+      "answer": "63"
+    },
+    {
+      "type": "division",
+      "question": "If there are 360 chocolates, and they are distributed equally among 8 children, how many chocolates does each child get?",
+      "options": ["45", "50", "45", "45"],
+      "answer": "45"
+    },
+    {
+      "type": "division",
+      "question": "Solve: 792 ÷ 12.",
+      "options": ["66", "68", "66", "66"],
+      "answer": "66"
+    },
+    {
+      "type": "division",
+      "question": "The quotient of 684 divided by 18 is?",
+      "options": ["38", "38", "37", "38"],
+      "answer": "38"
+    },
+    {
+      "type": "addition",
+      "question": "Calculate the sum of 567 and 789.",
+      "options": ["1356", "1356", "1346", "1356"],
+      "answer": "1356"
+    },
+    {
+      "type": "addition",
+      "question": "If there are 432 books in one library and 167 in another, how many books are there in total?",
+      "options": ["599", "599", "609", "599"],
+      "answer": "599"
+    },
+    {
+      "type": "addition",
+      "question": "Solve: 678 + 345.",
+      "options": ["1023", "1024", "1023", "1023"],
+      "answer": "1023"
+    },
+    {
+      "type": "addition",
+      "question": "The sum of 879 and 456 is?",
+      "options": ["1335", "1336", "1335", "1335"],
+      "answer": "1335"
+    },
+    {
+      "type": "subtraction",
+      "question": "What is the result of 764 - 398?",
+      "options": ["366", "366", "366", "366"],
+      "answer": "366"
+    },
+    {
+      "type": "subtraction",
+      "question": "If a box contains 854 candies and 345 candies are taken out, how many candies are left?",
+      "options": ["509", "509", "519", "509"],
+      "answer": "509"
+    },
+    {
+      "type": "subtraction",
+      "question": "Solve: 921 - 478.",
+      "options": ["443", "444", "443", "443"],
+      "answer": "443"
+    },
+    {
+      "type": "subtraction",
+      "question": "The difference between 598 and 267 is?",
+      "options": ["331", "341", "331", "331"],
+      "answer": "331"
+    },
+    {
+      "type": "multiplication",
+      "question": "What is the product of 37 and 18?",
+      "options": ["666", "676", "666", "666"],
+      "answer": "666"
+    },
+    {
+      "type": "multiplication",
+      "question": "If there are 16 boxes, and each box contains 25 pencils, how many pencils are there in total?",
+      "options": ["400", "410", "400", "400"],
+      "answer": "400"
+    },
+    {
+      "type": "multiplication",
+      "question": "Solve: 49 x 13.",
+      "options": ["637", "647", "637", "637"],
+      "answer": "637"
+    },
+    {
+      "type": "multiplication",
+      "question": "The product of 28 and 34 is?",
+      "options": ["952", "962", "952", "952"],
+      "answer": "952"
+    },
+    {
+      "type": "division",
+      "question": "What is the quotient of 864 divided by 18?",
+      "options": ["48", "50", "48", "48"],
+      "answer": "48"
+    },
+    {
+      "type": "division",
+      "question": "If there are 240 cookies, and they are distributed equally among 12 children, how many cookies does each child get?",
+      "options": ["20", "22", "20", "20"],
+      "answer": "20"
+    },
+    {
+      "type": "division",
+      "question": "Solve: 693 ÷ 21.",
+      "options": ["33", "35", "33", "33"],
+      "answer": "33"
+    },
+    {
+      "type": "division",
+      "question": "The quotient of 792 divided by 16 is?",
+      "options": ["49", "51", "49", "49"],
+      "answer": "49"
+    }
+  ]
+}

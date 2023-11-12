@@ -1,0 +1,285 @@
+{
+  "difficulty": 4,
+  "questions": [
+    {
+      
+      "question": "What is the sum of 486 and 237?",
+      "options": ["713", "723", "733", "743"],
+      "answer": "723",
+      "type": "addition"
+    },
+    {
+      
+      "question": "If you have 854 candies and eat 389, how many candies do you have left?",
+      "options": ["465", "475", "485", "495"],
+      "answer": "465",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 8 are there in 368?",
+      "options": ["42", "46", "50", "54"],
+      "answer": "46",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the product of 9 and 7?",
+      "options": ["58", "63", "72", "81"],
+      "answer": "63",
+      "type": "multiplication"
+    },
+    {
+      
+      "question": "If you have 976 toys and give 387 to your friend, how many toys do you have left?",
+      "options": ["589", "599", "609", "619"],
+      "answer": "589",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 6 are there in 354?",
+      "options": ["56", "58", "60", "62"],
+      "answer": "59",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the sum of 547 and 318?",
+      "options": ["865", "875", "885", "895"],
+      "answer": "865",
+      "type": "addition"
+    },
+    {
+      
+      "question": "If you have 684 apples and get 235 more, how many apples do you have?",
+      "options": ["899", "909", "919", "929"],
+      "answer": "919",
+      "type": "addition"
+    },
+    {
+      
+      "question": "How many groups of 7 are there in 406?",
+      "options": ["58", "60", "62", "64"],
+      "answer": "58",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the product of 8 and 6?",
+      "options": ["44", "52", "58", "64"],
+      "answer": "48",
+      "type": "multiplication"
+    },
+    {
+      
+      "question": "If you have 789 cookies and eat 356, how many cookies do you have left?",
+      "options": ["433", "443", "453", "463"],
+      "answer": "433",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 5 are there in 475?",
+      "options": ["85", "90", "95", "100"],
+      "answer": "95",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the sum of 568 and 345?",
+      "options": ["913", "923", "933", "943"],
+      "answer": "913",
+      "type": "addition"
+    },
+    {
+      
+      "question": "If you have 678 candies and give 289 to your friend, how many candies do you have left?",
+      "options": ["389", "399", "409", "419"],
+      "answer": "389",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 9 are there in 819?",
+      "options": ["89", "91", "93", "95"],
+      "answer": "91",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the product of 7 and 5?",
+      "options": ["32", "35", "42", "49"],
+      "answer": "35",
+      "type": "multiplication"
+    },
+    {
+      
+      "question": "If you have 876 toys and give 324 to your friend, how many toys do you have left?",
+      "options": ["552", "562", "572", "582"],
+      "answer": "552",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 6 are there in 456?",
+      "options": ["76", "78", "80", "82"],
+      "answer": "76",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the sum of 678 and 345?",
+      "options": ["1023", "1033", "1043", "1053"],
+      "answer": "1023",
+      "type": "addition"
+    },
+    {
+      
+      "question": "If you have 765 apples and get 328 more, how many apples do you have?",
+      "options": ["1093", "1103", "1113", "1123"],
+      "answer": "1093",
+      "type": "addition"
+    },
+    {
+      
+      "question": "What is the result of 124 + 356?",
+      "options": ["480", "490", "500", "510"],
+      "answer": "480",
+      "type": "addition"
+    },
+    {
+      
+      "question": "If you have 428 cookies and eat 235, how many cookies do you have left?",
+      "options": ["193", "203", "213", "223"],
+      "answer": "193",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 5 are there in 350?",
+      "options": ["70", "72", "74", "76"],
+      "answer": "70",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the product of 6 and 9?",
+      "options": ["48", "52", "54", "60"],
+      "answer": "54",
+      "type": "multiplication"
+    },
+    {
+      
+      "question": "If you have 987 toys and give 428 to your friend, how many toys do you have left?",
+      "options": ["559", "569", "579", "589"],
+      "answer": "559",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 3 are there in 237?",
+      "options": ["79", "81", "83", "85"],
+      "answer": "79",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the sum of 675 and 418?",
+      "options": ["1093", "1103", "1113", "1123"],
+      "answer": "1093",
+      "type": "addition"
+    },
+    {
+      
+      "question": "If you have 764 apples and get 328 more, how many apples do you have?",
+      "options": ["1092", "1102", "1112", "1122"],
+      "answer": "1092",
+      "type": "addition"
+    },
+    {
+      
+      "question": "How many groups of 4 are there in 468?",
+      "options": ["117", "119", "121", "123"],
+      "answer": "117",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the product of 8 and 6?",
+      "options": ["44", "52", "58", "64"],
+      "answer": "48",
+      "type": "multiplication"
+    },
+    {
+      
+      "question": "If you have 892 cookies and eat 345, how many cookies do you have left?",
+      "options": ["547", "557", "567", "577"],
+      "answer": "547",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 7 are there in 602?",
+      "options": ["86", "88", "90", "92"],
+      "answer": "86",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the sum of 756 and 289?",
+      "options": ["1045", "1055", "1065", "1075"],
+      "answer": "1045",
+      "type": "addition"
+    },
+    {
+      
+      "question": "If you have 974 candies and give 345 to your friend, how many candies do you have left?",
+      "options": ["629", "639", "649", "659"],
+      "answer": "629",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 8 are there in 736?",
+      "options": ["92", "94", "96", "98"],
+      "answer": "92",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the product of 9 and 7?",
+      "options": ["54", "63", "72", "81"],
+      "answer": "63",
+      "type": "multiplication"
+    },
+    {
+      
+      "question": "If you have 798 toys and give 327 to your friend, how many toys do you have left?",
+      "options": ["471", "481", "491", "501"],
+      "answer": "471",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 5 are there in 550?",
+      "options": ["110", "112", "114", "116"],
+      "answer": "110",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the sum of 678 and 357?",
+      "options": ["1035", "1045", "1055", "1065"],
+      "answer": "1035",
+      "type": "addition"
+    },
+    {
+      
+      "question": "If you have 564 apples and get 245 more, how many apples do you have?",
+      "options": ["799", "809", "819", "829"],
+      "answer": "809",
+      "type": "addition"
+    }
+  ]
+}

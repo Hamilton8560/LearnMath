@@ -1,0 +1,285 @@
+{
+  "difficulty": 2,
+  "questions": [
+    {
+      
+      "question": "What is the sum of 24 and 36?",
+      "options": ["50", "60", "70", "80"],
+      "answer": "60",
+      "type": "addition"
+    },
+    {
+      
+      "question": "If you have 45 candies and eat 17, how many candies do you have left?",
+      "options": ["18", "28", "38", "48"],
+      "answer": "28",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 5 are there in 35?",
+      "options": ["5", "6", "7", "8"],
+      "answer": "7",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the product of 8 and 4?",
+      "options": ["24", "32", "40", "48"],
+      "answer": "32",
+      "type": "multiplication"
+    },
+    {
+      
+      "question": "If you have 63 toys and give 28 to your friend, how many toys do you have left?",
+      "options": ["15", "25", "35", "45"],
+      "answer": "35",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 3 are there in 21?",
+      "options": ["5", "6", "7", "8"],
+      "answer": "7",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the sum of 46 and 29?",
+      "options": ["65", "75", "85", "95"],
+      "answer": "75",
+      "type": "addition"
+    },
+    {
+      
+      "question": "If you have 56 apples and get 23 more, how many apples do you have?",
+      "options": ["69", "79", "89", "99"],
+      "answer": "79",
+      "type": "addition"
+    },
+    {
+      
+      "question": "How many groups of 4 are there in 36?",
+      "options": ["7", "8", "9", "10"],
+      "answer": "9",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the product of 7 and 5?",
+      "options": ["25", "35", "45", "55"],
+      "answer": "35",
+      "type": "multiplication"
+    },
+    {
+      
+      "question": "If you have 84 cookies and eat 39, how many cookies do you have left?",
+      "options": ["35", "45", "55", "65"],
+      "answer": "45",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 6 are there in 54?",
+      "options": ["7", "8", "9", "10"],
+      "answer": "9",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the sum of 58 and 17?",
+      "options": ["75", "85", "95", "105"],
+      "answer": "75",
+      "type": "addition"
+    },
+    {
+      
+      "question": "If you have 79 candies and give 34 to your friend, how many candies do you have left?",
+      "options": ["35", "45", "55", "65"],
+      "answer": "45",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 8 are there in 64?",
+      "options": ["6", "7", "8", "9"],
+      "answer": "8",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the product of 9 and 6?",
+      "options": ["44", "54", "64", "74"],
+      "answer": "54",
+      "type": "multiplication"
+    },
+    {
+      
+      "question": "If you have 92 toys and give 27 to your friend, how many toys do you have left?",
+      "options": ["35", "45", "55", "65"],
+      "answer": "65",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 7 are there in 49?",
+      "options": ["5", "6", "7", "8"],
+      "answer": "7",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the sum of 36 and 28?",
+      "options": ["54", "64", "74", "84"],
+      "answer": "64",
+      "type": "addition"
+    },
+    {
+      
+      "question": "If you have 45 apples and get 22 more, how many apples do you have?",
+      "options": ["57", "67", "77", "87"],
+      "answer": "67",
+      "type": "addition"
+    },
+    {
+      
+      "question": "What is the result of 16 + 25?",
+      "options": ["31", "41", "51", "61"],
+      "answer": "41",
+      "type": "addition"
+    },
+    {
+      
+      "question": "If you have 36 candies and eat 14, how many candies do you have left?",
+      "options": ["16", "26", "36", "46"],
+      "answer": "22",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 4 are there in 32?",
+      "options": ["6", "7", "8", "9"],
+      "answer": "8",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the product of 5 and 7?",
+      "options": ["28", "35", "42", "49"],
+      "answer": "35",
+      "type": "multiplication"
+    },
+    {
+      
+      "question": "If you have 58 toys and give 26 to your friend, how many toys do you have left?",
+      "options": ["22", "32", "42", "52"],
+      "answer": "32",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 3 are there in 27?",
+      "options": ["6", "7", "8", "9"],
+      "answer": "9",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the sum of 49 and 18?",
+      "options": ["57", "67", "77", "87"],
+      "answer": "67",
+      "type": "addition"
+    },
+    {
+      
+      "question": "If you have 74 apples and get 28 more, how many apples do you have?",
+      "options": ["92", "102", "112", "122"],
+      "answer": "102",
+      "type": "addition"
+    },
+    {
+      
+      "question": "How many groups of 6 are there in 54?",
+      "options": ["7", "8", "9", "10"],
+      "answer": "9",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the product of 8 and 6?",
+      "options": ["44", "54", "64", "74"],
+      "answer": "48",
+      "type": "multiplication"
+    },
+    {
+      
+      "question": "If you have 82 cookies and eat 39, how many cookies do you have left?",
+      "options": ["43", "53", "63", "73"],
+      "answer": "43",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 7 are there in 63?",
+      "options": ["7", "8", "9", "10"],
+      "answer": "9",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the sum of 57 and 28?",
+      "options": ["75", "85", "95", "105"],
+      "answer": "85",
+      "type": "addition"
+    },
+    {
+      
+      "question": "If you have 92 candies and give 37 to your friend, how many candies do you have left?",
+      "options": ["45", "55", "65", "75"],
+      "answer": "55",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 8 are there in 72?",
+      "options": ["6", "7", "8", "9"],
+      "answer": "9",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the product of 9 and 7?",
+      "options": ["54", "63", "72", "81"],
+      "answer": "63",
+      "type": "multiplication"
+    },
+    {
+      
+      "question": "If you have 78 toys and give 29 to your friend, how many toys do you have left?",
+      "options": ["49", "59", "69", "79"],
+      "answer": "49",
+      "type": "subtraction"
+    },
+    {
+      
+      "question": "How many groups of 5 are there in 40?",
+      "options": ["6", "7", "8", "9"],
+      "answer": "8",
+      "type": "division"
+    },
+    {
+      
+      "question": "What is the sum of 68 and 27?",
+      "options": ["85", "95", "105", "115"],
+      "answer": "95",
+      "type": "addition"
+    },
+    {
+      
+      "question": "If you have 56 apples and get 24 more, how many apples do you have?",
+      "options": ["76", "86", "96", "106"],
+      "answer": "80",
+      "type": "addition"
+    }
+  ]
+}
