@@ -1,0 +1,288 @@
+[2023-11-04 12:40:30,016] {/home/cosgran/workspace/angular-test/app/__init__.py:17} INFO - DB and logging setup
+[2023-11-04 12:40:30,201] {/home/cosgran/workspace/angular-test/app/__init__.py:17} INFO - DB and logging setup
+[2023-11-04 12:41:12,682] {/home/cosgran/workspace/angular-test/app/__init__.py:17} INFO - DB and logging setup
+[2023-11-04 12:42:44,650] {/home/cosgran/workspace/angular-test/app/__init__.py:17} INFO - DB and logging setup
+[2023-11-04 12:43:01,365] {/home/cosgran/workspace/angular-test/app/__init__.py:17} INFO - DB and logging setup
+[2023-11-04 12:43:01,525] {/home/cosgran/workspace/angular-test/app/__init__.py:17} INFO - DB and logging setup
+[2023-11-04 12:43:53,454] {/home/cosgran/workspace/angular-test/app/__init__.py:17} INFO - DB and logging setup
+[2023-11-04 12:44:59,990] {/home/cosgran/workspace/angular-test/app/__init__.py:17} INFO - DB and logging setup
+[2023-11-04 12:45:48,791] {/home/cosgran/workspace/angular-test/app/__init__.py:17} INFO - DB and logging setup
+[2023-11-04 12:56:47,525] {/home/cosgran/workspace/angular-test/app/__init__.py:17} INFO - DB and logging setup
+[2023-11-04 12:56:47,718] {/home/cosgran/workspace/angular-test/app/__init__.py:17} INFO - DB and logging setup
+[2023-11-04 14:32:41,582] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-04 14:32:41,733] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-04 14:35:23,052] {/home/cosgran/workspace/angular-test/app/__init__.py:20} INFO - DB and logging setup
+[2023-11-04 14:35:23,187] {/home/cosgran/workspace/angular-test/app/__init__.py:20} INFO - DB and logging setup
+[2023-11-04 14:37:01,526] {/home/cosgran/workspace/angular-test/app/__init__.py:20} INFO - DB and logging setup
+[2023-11-04 14:37:01,658] {/home/cosgran/workspace/angular-test/app/__init__.py:20} INFO - DB and logging setup
+[2023-11-04 14:38:18,710] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-04 14:38:18,710] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-04 14:38:18,710] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-04 14:38:18,711] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 09:58:29,571] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 09:58:29,580] {/home/cosgran/workspace/angular-test/app/lib/helper.py:41} WARNING - Table users not found within database - generated empty table with no data.
+[2023-11-05 09:58:29,587] {/home/cosgran/workspace/angular-test/app/lib/helper.py:41} WARNING - Table questions not found within database - generated empty table with no data.
+[2023-11-05 09:58:29,594] {/home/cosgran/workspace/angular-test/app/lib/helper.py:41} WARNING - Table users_questions not found within database - generated empty table with no data.
+[2023-11-05 09:58:29,755] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 09:58:29,755] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 09:58:29,756] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 09:58:29,756] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:00:52,862] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:00:52,863] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:00:52,863] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:00:52,863] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:01:28,053] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:01:28,054] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:01:28,055] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:01:28,055] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:01:43,183] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:01:43,183] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:01:43,184] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:01:43,184] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:02:58,224] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:02:58,225] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:02:58,225] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:02:58,225] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:03:08,433] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:06:41,680] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:06:50,103] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:07:29,915] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:07:30,062] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:07:30,062] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:07:30,062] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:07:30,062] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:07:36,786] {/home/cosgran/workspace/angular-test/app/routes/users.py:49} INFO - /api/users/exists - attempting to verify user...
+[2023-11-05 10:07:36,787] {/home/cosgran/workspace/angular-test/app/routes/users.py:79} ERROR - Invalid json format from request
+[2023-11-05 10:08:18,793] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:08:18,793] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:08:18,793] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:08:18,793] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:08:22,717] {/home/cosgran/workspace/angular-test/app/routes/users.py:49} INFO - /api/users/exists - attempting to verify user...
+[2023-11-05 10:08:22,718] {/home/cosgran/workspace/angular-test/app/routes/users.py:79} ERROR - Invalid json format from request
+[2023-11-05 10:08:36,584] {/home/cosgran/workspace/angular-test/app/routes/users.py:49} INFO - /api/users/exists - attempting to verify user...
+[2023-11-05 10:08:36,584] {/home/cosgran/workspace/angular-test/app/routes/users.py:79} ERROR - Invalid json format from request
+[2023-11-05 10:11:34,421] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:11:34,422] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:11:34,422] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:11:34,422] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:12:09,907] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:12:09,908] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:12:09,908] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:12:09,908] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:14:40,177] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:14:40,177] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:14:40,177] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:14:40,178] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:15:03,650] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:15:03,651] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:15:03,651] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:15:03,651] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:45:14,589] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:45:14,738] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:45:14,739] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:45:14,739] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:45:14,739] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:45:18,672] {/home/cosgran/workspace/angular-test/app/routes/users.py:53} INFO - /api/users/exists - attempting to verify user...
+[2023-11-05 10:45:18,673] {/home/cosgran/workspace/angular-test/app/routes/users.py:98} ERROR - SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140355488280576 and this is thread id 140355454748224.
+Traceback (most recent call last):
+  File "/home/cosgran/workspace/angular-test/app/routes/users.py", line 59, in email_exists
+    cur.execute("SELECT email FROM users WHERE email = ?;", (email,))
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140355488280576 and this is thread id 140355454748224.
+[2023-11-05 10:45:35,599] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:45:35,609] {/home/cosgran/workspace/angular-test/app/lib/helper.py:41} WARNING - Table users not found within database - generated empty table with no data.
+[2023-11-05 10:45:35,616] {/home/cosgran/workspace/angular-test/app/lib/helper.py:41} WARNING - Table questions not found within database - generated empty table with no data.
+[2023-11-05 10:45:35,625] {/home/cosgran/workspace/angular-test/app/lib/helper.py:41} WARNING - Table users_questions not found within database - generated empty table with no data.
+[2023-11-05 10:45:35,776] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:45:35,777] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:45:35,777] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:45:35,777] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:45:49,014] {/home/cosgran/workspace/angular-test/app/routes/users.py:53} INFO - /api/users/exists - attempting to verify user...
+[2023-11-05 10:45:49,015] {/home/cosgran/workspace/angular-test/app/routes/users.py:98} ERROR - SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139658525028352 and this is thread id 139658491496000.
+Traceback (most recent call last):
+  File "/home/cosgran/workspace/angular-test/app/routes/users.py", line 59, in email_exists
+    cur.execute("SELECT email FROM users WHERE email = ?;", (email,))
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139658525028352 and this is thread id 139658491496000.
+[2023-11-05 10:48:17,817] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:48:17,957] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:48:17,957] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:48:17,957] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:48:17,957] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:48:20,631] {/home/cosgran/workspace/angular-test/app/routes/users.py:53} INFO - /api/users/exists - attempting to verify user...
+[2023-11-05 10:48:20,632] {/home/cosgran/workspace/angular-test/app/routes/users.py:74} WARNING - UnAuthError - Invalid email address, please sign up to continue.
+[2023-11-05 10:50:35,650] {/home/cosgran/workspace/angular-test/app/routes/users.py:210} INFO - /api/users/auth - performing authorization
+[2023-11-05 10:50:35,650] {/home/cosgran/workspace/angular-test/app/routes/users.py:269} ERROR - Incorrect number of bindings supplied. The current statement uses 1, and there are 13 supplied.
+Traceback (most recent call last):
+  File "/home/cosgran/workspace/angular-test/app/routes/users.py", line 223, in create_user
+    cur.execute("SELECT email, password FROM users WHERE email = ?;", (str(data["email"]).lower()))
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 13 supplied.
+[2023-11-05 10:50:59,542] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:50:59,543] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:50:59,543] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:50:59,543] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:51:07,957] {/home/cosgran/workspace/angular-test/app/routes/users.py:210} INFO - /api/users/auth - performing authorization
+[2023-11-05 10:51:07,959] {/home/cosgran/workspace/angular-test/app/routes/users.py:269} ERROR - Incorrect number of bindings supplied. The current statement uses 1, and there are 13 supplied.
+Traceback (most recent call last):
+  File "/home/cosgran/workspace/angular-test/app/routes/users.py", line 223, in create_user
+    cur.execute("SELECT email, password FROM users WHERE email = ?;", (str(data["email"]).lower()))
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 13 supplied.
+[2023-11-05 10:52:08,313] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:52:08,313] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:52:08,313] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:52:08,313] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:52:10,789] {/home/cosgran/workspace/angular-test/app/routes/users.py:210} INFO - /api/users/auth - performing authorization
+[2023-11-05 10:52:10,790] {/home/cosgran/workspace/angular-test/app/routes/users.py:269} ERROR - Incorrect number of bindings supplied. The current statement uses 1, and there are 13 supplied.
+Traceback (most recent call last):
+  File "/home/cosgran/workspace/angular-test/app/routes/users.py", line 223, in create_user
+    cur.execute("SELECT email, password FROM users WHERE email = ?;", (str(data["email"]).lower()))
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 13 supplied.
+[2023-11-05 10:52:22,311] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:52:22,312] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:52:22,312] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:52:22,312] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:52:27,920] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:52:27,920] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:52:27,921] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:52:27,921] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:52:29,896] {/home/cosgran/workspace/angular-test/app/routes/users.py:210} INFO - /api/users/auth - performing authorization
+[2023-11-05 10:52:29,897] {/home/cosgran/workspace/angular-test/app/routes/users.py:244} ERROR - UnAuthError - Password range must be between (8, 30) characters.
+[2023-11-05 10:53:29,240] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:53:29,240] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:53:29,241] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:53:29,241] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:53:32,453] {/home/cosgran/workspace/angular-test/app/routes/users.py:210} INFO - /api/users/auth - performing authorization
+[2023-11-05 10:53:32,454] {/home/cosgran/workspace/angular-test/app/routes/users.py:244} ERROR - UnAuthError - Password range must be between (8-30) characters.
+[2023-11-05 10:53:56,545] {/home/cosgran/workspace/angular-test/app/routes/users.py:210} INFO - /api/users/auth - performing authorization
+[2023-11-05 10:53:56,545] {/home/cosgran/workspace/angular-test/app/routes/users.py:269} ERROR - search() missing 1 required positional argument: 'string'
+Traceback (most recent call last):
+  File "/home/cosgran/workspace/angular-test/app/routes/users.py", line 229, in create_user
+    status, resp = validate_pw_complexity(data["password"])
+  File "/home/cosgran/workspace/angular-test/app/lib/auth.py", line 22, in validate_pw_complexity
+    elif not re.search(r"[A-Z]"):
+TypeError: search() missing 1 required positional argument: 'string'
+[2023-11-05 10:54:08,619] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:54:08,619] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:54:08,620] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:54:08,620] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-05 10:54:10,704] {/home/cosgran/workspace/angular-test/app/routes/users.py:210} INFO - /api/users/auth - performing authorization
+[2023-11-05 10:54:10,705] {/home/cosgran/workspace/angular-test/app/routes/users.py:244} ERROR - UnAuthError - Password must contain 1 uppercase character.
+[2023-11-05 10:54:28,951] {/home/cosgran/workspace/angular-test/app/__init__.py:18} INFO - DB and logging setup
+[2023-11-05 10:54:28,951] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users
+[2023-11-05 10:54:28,952] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking questions
+[2023-11-05 10:54:28,952] {/home/cosgran/workspace/angular-test/app/lib/helper.py:37} DEBUG - checking users_questions
+[2023-11-11 10:49:23,084] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 10:50:43,748] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 10:51:51,159] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 10:53:56,808] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 10:57:46,558] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 10:58:53,317] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 10:59:49,687] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 11:00:26,071] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 11:01:15,963] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 11:03:15,172] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 11:04:26,791] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 11:04:26,807] {/home/cosgran/workspace/angular-test/app/lib/helper.py:61} WARNING - Table users not found within database - generated empty table with no data.
+[2023-11-11 11:04:26,818] {/home/cosgran/workspace/angular-test/app/lib/helper.py:61} WARNING - Table questions not found within database - generated empty table with no data.
+[2023-11-11 11:07:01,241] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 11:10:51,935] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 11:17:52,269] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 11:19:40,938] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 11:51:47,404] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 11:51:47,417] {/home/cosgran/workspace/angular-test/app/lib/helper.py:80} WARNING - Table questions empty - auto-populated with 226 rows
+[2023-11-11 11:51:47,425] {/home/cosgran/workspace/angular-test/app/lib/helper.py:65} WARNING - Table users_questions not found within database - generated empty table with no data.
+[2023-11-11 11:51:47,582] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 13:00:23,215] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 13:00:23,365] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 13:00:43,800] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 13:00:43,811] {/home/cosgran/workspace/angular-test/app/lib/helper.py:66} WARNING - Table users not found within database - generated empty table with no data.
+[2023-11-11 13:00:43,819] {/home/cosgran/workspace/angular-test/app/lib/helper.py:66} WARNING - Table questions not found within database - generated empty table with no data.
+[2023-11-11 13:00:43,828] {/home/cosgran/workspace/angular-test/app/lib/helper.py:82} WARNING - Table questions empty - auto-populated with 226 rows
+[2023-11-11 13:00:43,834] {/home/cosgran/workspace/angular-test/app/lib/helper.py:66} WARNING - Table users_questions not found within database - generated empty table with no data.
+[2023-11-11 13:00:43,982] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 15:59:05,886] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 15:59:05,894] {/home/cosgran/workspace/angular-test/app/lib/helper.py:66} WARNING - Table users not found within database - generated empty table with no data.
+[2023-11-11 15:59:05,899] {/home/cosgran/workspace/angular-test/app/lib/helper.py:91} WARNING - Table %s empty - auto-populated with user=foo.bar@email.com, pw=Test123!
+[2023-11-11 15:59:05,907] {/home/cosgran/workspace/angular-test/app/lib/helper.py:66} WARNING - Table questions not found within database - generated empty table with no data.
+[2023-11-11 15:59:05,918] {/home/cosgran/workspace/angular-test/app/lib/helper.py:82} WARNING - Table questions empty - auto-populated with 226 rows
+[2023-11-11 15:59:05,927] {/home/cosgran/workspace/angular-test/app/lib/helper.py:66} WARNING - Table users_questions not found within database - generated empty table with no data.
+[2023-11-11 16:00:17,330] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 16:00:17,467] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 16:03:30,446] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 17:55:34,205] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 17:55:34,387] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 17:56:44,854] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 17:57:10,218] {/home/cosgran/workspace/angular-test/app/lib/auth.py:89} ERROR - UnAuthError - Authorization must be a Bearer Token
+[2023-11-11 17:57:52,521] {/home/cosgran/workspace/angular-test/app/lib/auth.py:98} ERROR - PyJWT.decode() got multiple values for argument 'algorithms'
+Traceback (most recent call last):
+  File "/home/cosgran/workspace/angular-test/app/lib/auth.py", line 67, in wrap
+    endpoint, expires_at = jwt.decode(
+TypeError: PyJWT.decode() got multiple values for argument 'algorithms'
+[2023-11-11 17:58:20,311] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 17:58:22,039] {/home/cosgran/workspace/angular-test/app/lib/auth.py:89} ERROR - UnAuthError - Invalid token for endpoint
+[2023-11-11 17:58:56,655] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 17:59:02,285] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 17:59:06,508] {/home/cosgran/workspace/angular-test/app/lib/auth.py:90} ERROR - UnAuthError - Invalid token for endpoint
+[2023-11-11 17:59:25,987] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 17:59:47,196] {/home/cosgran/workspace/angular-test/app/lib/auth.py:89} ERROR - UnAuthError - Invalid token for endpoint
+[2023-11-11 18:00:22,377] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 18:00:23,886] {/home/cosgran/workspace/angular-test/app/lib/auth.py:90} ERROR - UnAuthError - Invalid token for endpoint
+[2023-11-11 18:02:49,361] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 18:02:54,838] {/home/cosgran/workspace/angular-test/app/lib/auth.py:98} ERROR - 'endpoint'
+Traceback (most recent call last):
+  File "/home/cosgran/workspace/angular-test/app/lib/auth.py", line 69, in wrap
+    print(decoded_vals["endpoint"], str(request.url_rule))
+KeyError: 'endpoint'
+[2023-11-11 18:03:11,040] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 18:03:14,826] {/home/cosgran/workspace/angular-test/app/lib/auth.py:76} INFO - Admin token verified
+[2023-11-11 18:03:14,826] {/home/cosgran/workspace/angular-test/app/routes/users.py:336} INFO - /api/users/manage - performing admin unlock..
+[2023-11-11 18:03:14,828] {/home/cosgran/workspace/angular-test/app/routes/users.py:377} ERROR - HTTPError - Missing email or active value with request.body.
+[2023-11-11 18:03:46,225] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 18:04:18,282] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 18:05:26,057] {/home/cosgran/workspace/angular-test/app/lib/auth.py:75} INFO - Admin token verified
+[2023-11-11 18:05:26,058] {/home/cosgran/workspace/angular-test/app/routes/users.py:336} INFO - /api/users/manage - performing admin unlock..
+[2023-11-11 18:05:26,059] {/home/cosgran/workspace/angular-test/app/routes/users.py:377} ERROR - HTTPError - Invalid request, body.value active must be type boolean
+[2023-11-11 18:05:49,699] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 18:05:51,331] {/home/cosgran/workspace/angular-test/app/lib/auth.py:75} INFO - Admin token verified
+[2023-11-11 18:05:51,332] {/home/cosgran/workspace/angular-test/app/routes/users.py:336} INFO - /api/users/manage - performing admin unlock..
+[2023-11-11 18:05:51,333] {/home/cosgran/workspace/angular-test/app/routes/users.py:360} INFO - Successfully set account foo.bar@email.com, active = True
+[2023-11-11 18:06:02,326] {/home/cosgran/workspace/angular-test/app/lib/auth.py:75} INFO - Admin token verified
+[2023-11-11 18:06:02,327] {/home/cosgran/workspace/angular-test/app/routes/users.py:336} INFO - /api/users/manage - performing admin unlock..
+[2023-11-11 18:06:02,327] {/home/cosgran/workspace/angular-test/app/routes/users.py:377} ERROR - HTTPError - Invalid email address format.
+[2023-11-11 18:16:30,657] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 18:17:14,470] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 18:18:46,880] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 18:19:18,939] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 18:19:19,124] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 18:19:41,756] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 18:24:38,261] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 18:35:58,832] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 18:36:01,266] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 19:37:48,524] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 19:46:52,115] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 19:49:48,050] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 19:55:55,583] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 20:52:12,080] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 20:53:22,292] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 20:53:34,216] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 20:53:48,279] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 20:55:01,386] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 20:55:09,103] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 21:01:59,289] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 21:03:06,051] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 21:09:33,891] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 21:47:06,494] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 21:50:21,331] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-11 21:59:45,805] {/home/cosgran/workspace/angular-test/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-12 09:53:44,132] {/home/cosgran/workspace/LearnMath/backend/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-12 09:53:44,210] {/home/cosgran/workspace/LearnMath/backend/app/lib/helper.py:72} WARNING - Table users not found within database - generated empty table with no data.
+[2023-11-12 09:53:44,288] {/home/cosgran/workspace/LearnMath/backend/app/lib/helper.py:101} WARNING - Table %s empty - auto-populated with user=foo.bar@email.com, pw=Test123!
+[2023-11-12 09:53:44,391] {/home/cosgran/workspace/LearnMath/backend/app/lib/helper.py:72} WARNING - Table questions not found within database - generated empty table with no data.
+[2023-11-12 09:53:44,482] {/home/cosgran/workspace/LearnMath/backend/app/lib/helper.py:92} WARNING - Table questions empty - auto-populated with 226 questions: [{'level': 1, 'count()': 37}, {'level': 2, 'count()': 39}, {'level': 3, 'count()': 16}, {'level': 4, 'count()': 10}, {'level': 5, 'count()': 36}, {'level': 6, 'count()': 32}, {'level': 7, 'count()': 24}, {'level': 8, 'count()': 32}]
+[2023-11-12 09:53:44,570] {/home/cosgran/workspace/LearnMath/backend/app/lib/helper.py:72} WARNING - Table users_questions not found within database - generated empty table with no data.
+[2023-11-12 09:53:44,697] {/home/cosgran/workspace/LearnMath/backend/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-12 09:58:55,129] {/home/cosgran/workspace/LearnMath/backend/app/__init__.py:21} INFO - DB and logging setup
+[2023-11-12 09:58:55,206] {/home/cosgran/workspace/LearnMath/backend/app/lib/helper.py:72} WARNING - Table users not found within database - generated empty table with no data.
+[2023-11-12 09:58:55,286] {/home/cosgran/workspace/LearnMath/backend/app/lib/helper.py:101} WARNING - Table %s empty - auto-populated with user=foo.bar@email.com, pw=Test123!
+[2023-11-12 09:58:55,381] {/home/cosgran/workspace/LearnMath/backend/app/lib/helper.py:72} WARNING - Table questions not found within database - generated empty table with no data.
+[2023-11-12 09:58:55,494] {/home/cosgran/workspace/LearnMath/backend/app/lib/helper.py:92} WARNING - Table questions empty - auto-populated with 250 questions: [{'level': 1, 'count()': 37}, {'level': 2, 'count()': 39}, {'level': 3, 'count()': 16}, {'level': 4, 'count()': 34}, {'level': 5, 'count()': 36}, {'level': 6, 'count()': 32}, {'level': 7, 'count()': 24}, {'level': 8, 'count()': 32}]
+[2023-11-12 09:58:55,587] {/home/cosgran/workspace/LearnMath/backend/app/lib/helper.py:72} WARNING - Table users_questions not found within database - generated empty table with no data.
+[2023-11-12 09:58:55,733] {/home/cosgran/workspace/LearnMath/backend/app/__init__.py:21} INFO - DB and logging setup

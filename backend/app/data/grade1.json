@@ -1,0 +1,341 @@
+{
+  "difficulty": 1,
+  "questions": [
+        {
+        
+        "question": "What is the sum of 3 and 5?",
+        "options": ["7", "8", "9", "10"],
+        "answer": "8",
+        "type": "addition"
+        },
+        {
+        
+        "question": "If you have 7 candies and eat 2, how many candies do you have left?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "5",
+        "type": "subtraction"
+        },
+        {
+        
+        "question": "How many groups of 4 are there in 12?",
+        "options": ["2", "3", "4", "5"],
+        "answer": "3",
+        "type": "division"
+        },
+        {
+        
+        "question": "What is the product of 6 and 3?",
+        "options": ["15", "16", "17", "18"],
+        "answer": "18",
+        "type": "multiplication"
+        },
+        {
+        
+        "question": "If you have 8 toys and give 3 to your friend, how many toys do you have left?",
+        "options": ["5", "6", "7", "8"],
+        "answer": "5",
+        "type": "subtraction"
+        },
+        {
+        
+        "question": "How many groups of 2 are there in 10?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "5",
+        "type": "division"
+        },
+        {
+        
+        "question": "What is the sum of 4 and 6?",
+        "options": ["9", "10", "11", "12"],
+        "answer": "10",
+        "type": "addition"
+        },
+        {
+        
+        "question": "If you have 5 apples and get 2 more, how many apples do you have?",
+        "options": ["5", "6", "7", "8"],
+        "answer": "7",
+        "type": "addition"
+        },
+        {
+        
+        "question": "How many groups of 3 are there in 9?",
+        "options": ["2", "3", "4", "5"],
+        "answer": "3",
+        "type": "division"
+        },
+        {
+        
+        "question": "What is the product of 2 and 4?",
+        "options": ["6", "7", "8", "9"],
+        "answer": "8",
+        "type": "multiplication"
+        },
+        {
+        
+        "question": "If you have 6 cookies and eat 2, how many cookies do you have left?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "4",
+        "type": "subtraction"
+        },
+        {
+        
+        "question": "How many groups of 2 are there in 8?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "4",
+        "type": "division"
+        },
+        {
+        
+        "question": "What is the sum of 7 and 3?",
+        "options": ["9", "10", "11", "12"],
+        "answer": "10",
+        "type": "addition"
+        },
+        {
+        
+        "question": "If you have 9 candies and give 4 to your friend, how many candies do you have left?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "5",
+        "type": "subtraction"
+        },
+        {
+        
+        "question": "How many groups of 5 are there in 15?",
+        "options": ["2", "3", "4", "5"],
+        "answer": "3",
+        "type": "division"
+        },
+        {
+        
+        "question": "What is the product of 3 and 2?",
+        "options": ["5", "6", "7", "8"],
+        "answer": "6",
+        "type": "multiplication"
+        },
+        {
+        
+        "question": "If you have 10 toys and give 3 to your friend, how many toys do you have left?",
+        "options": ["5", "6", "7", "8"],
+        "answer": "7",
+        "type": "subtraction"
+        },
+        {
+        
+        "question": "How many groups of 4 are there in 16?",
+        "options": ["2", "3", "4", "5"],
+        "answer": "4",
+        "type": "division"
+        },
+        {
+        
+        "question": "What is the sum of 8 and 2?",
+        "options": ["9", "10", "11", "12"],
+        "answer": "10",
+        "type": "addition"
+        },
+        {
+        
+        "question": "If you have 4 apples and get 3 more, how many apples do you have?",
+        "options": ["5", "6", "7", "8"],
+        "answer": "7",
+        "type": "addition"
+        },
+        {
+        
+        "question": "What is the sum of 5 and 4?",
+        "options": ["8", "9", "10", "11"],
+        "answer": "9",
+        "type": "addition"
+        },
+        {
+        
+        "question": "If you have 6 candies and eat 1, how many candies do you have left?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "5",
+        "type": "subtraction"
+        },
+        {
+        
+        "question": "How many groups of 3 are there in 9?",
+        "options": ["2", "3", "4", "5"],
+        "answer": "3",
+        "type": "division"
+        },
+        {
+        
+        "question": "What is the product of 4 and 2?",
+        "options": ["6", "7", "8", "9"],
+        "answer": "8",
+        "type": "multiplication"
+        },
+        {
+        
+        "question": "If you have 7 toys and give 2 to your friend, how many toys do you have left?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "5",
+        "type": "subtraction"
+        },
+        {
+        
+        "question": "How many groups of 2 are there in 8?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "4",
+        "type": "division"
+        },
+        {
+        
+        "question": "What is the sum of 3 and 7?",
+        "options": ["9", "10", "11", "12"],
+        "answer": "10",
+        "type": "addition"
+        },
+        {
+        
+        "question": "If you have 8 apples and get 1 more, how many apples do you have?",
+        "options": ["8", "9", "10", "11"],
+        "answer": "9",
+        "type": "addition"
+        },
+        {
+        
+        "question": "How many groups of 4 are there in 16?",
+        "options": ["2", "3", "4", "5"],
+        "answer": "4",
+        "type": "division"
+        },
+        {
+        
+        "question": "What is the product of 3 and 3?",
+        "options": ["6", "7", "8", "9"],
+        "answer": "9",
+        "type": "multiplication"
+        },
+        {
+        
+        "question": "If you have 9 cookies and eat 3, how many cookies do you have left?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "6",
+        "type": "subtraction"
+        },
+        {
+        
+        "question": "How many groups of 2 are there in 10?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "5",
+        "type": "division"
+        },
+        {
+        
+        "question": "What is the sum of 5 and 5?",
+        "options": ["8", "9", "10", "11"],
+        "answer": "10",
+        "type": "addition"
+        },
+        {
+        
+        "question": "If you have 6 candies and eat 2, how many candies do you have left?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "4",
+        "type": "subtraction"
+        },
+        {
+        
+        "question": "How many groups of 3 are there in 9?",
+        "options": ["2", "3", "4", "5"],
+        "answer": "3",
+        "type": "division"
+        },
+        {
+        
+        "question": "What is the product of 2 and 5?",
+        "options": ["6", "7", "8", "10"],
+        "answer": "10",
+        "type": "multiplication"
+        },
+        {
+        
+        "question": "If you have 8 toys and give 3 to your friend, how many toys do you have left?",
+        "options": ["5", "6", "7", "8"],
+        "answer": "5",
+        "type": "subtraction"
+        },
+        {
+        
+        "question": "How many groups of 2 are there in 8?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "4",
+        "type": "division"
+        },
+        {
+        
+        "question": "What is the sum of 7 and 2?",
+        "options": ["9", "10", "11", "12"],
+        "answer": "9",
+        "type": "addition"
+        },
+        {
+        
+        "question": "If you have 5 apples and get 4 more, how many apples do you have?",
+        "options": ["8", "9", "10", "11"],
+        "answer": "9",
+        "type": "addition"
+        },
+        {
+        
+        "question": "How many groups of 3 are there in 12?",
+        "options": ["2", "3", "4", "5"],
+        "answer": "4",
+        "type": "division"
+        },
+        {
+        
+        "question": "What is the product of 4 and 3?",
+        "options": ["6", "7", "8", "12"],
+        "answer": "12",
+        "type": "multiplication"
+        },
+        {
+        
+        "question": "If you have 6 cookies and eat 3, how many cookies do you have left?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "3",
+        "type": "subtraction"
+        },
+        {
+        
+        "question": "How many groups of 2 are there in 10?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "5",
+        "type": "division"
+        },
+        {
+        
+        "question": "What is the sum of 4 and 6?",
+        "options": ["9", "10", "11", "12"],
+        "answer": "10",
+        "type": "addition"
+        },
+        {
+        
+        "question": "If you have 7 candies and eat 2, how many candies do you have left?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "5",
+        "type": "subtraction"
+        },
+        {
+        
+        "question": "How many groups of 4 are there in 16?",
+        "options": ["2", "3", "4", "5"],
+        "answer": "4",
+        "type": "division"
+        },
+        {
+        
+        "question": "What is the product of 3 and 4?",
+        "options": ["7", "8", "9", "12"],
+        "answer": "12",
+        "type": "multiplication"
+        }
+    ]
+}

@@ -1,0 +1,215 @@
+{
+  "difficulty": 4,
+  "questions": [
+    {
+      "question": "What is the sum of 265 and 387?",
+      "options": ["621", "652", "652", "652"],
+      "answer": "652",
+      "type": "addition"
+    },
+    {
+      "question": "If a rectangle has a length of 14 units and a width of 8 units, what is its area?",
+      "options": ["92 sq units", "112 sq units", "120 sq units", "168 sq units"],
+      "answer": "112 sq units",
+      "type": "multiplication"
+    },
+    {
+      "question": "Subtract 148 from 520.",
+      "options": ["372", "382", "392", "402"],
+      "answer": "372",
+      "type": "subtraction"
+    },
+    {
+      "question": "Which of the following expressions represents the product of 6 and 9?",
+      "options": ["6 + 9", "6 - 9", "6 × 9", "6 ÷ 9"],
+      "answer": "6 × 9",
+      "type": "multiplication"
+    },
+    {
+      "question": "If a box contains 7 red apples and 4 green apples, what is the total number of apples?",
+      "options": ["8", "10", "11", "13"],
+      "answer": "11",
+      "type": "addition"
+    },
+    {
+      "question": "Calculate the value of 45 ÷ 5.",
+      "options": ["7", "8", "9", "10"],
+      "answer": "9",
+      "type": "division"
+    },
+    {
+      "question": "If a clock shows 2:30, what is the difference in minutes between the hour and minute hands?",
+      "options": ["30", "45", "60", "75"],
+      "answer": "30",
+      "type": "subtraction"
+    },
+    {
+      "question": "Add 3/5 and 2/5.",
+      "options": ["1/5", "3/5", "5/5", "4/5"],
+      "answer": "5/5",
+      "type": "addition"
+    },
+    {
+      "question": "If a triangle has sides of length 8 cm, 15 cm, and 17 cm, what type of triangle is it?",
+      "options": ["Equilateral", "Isosceles", "Scalene", "Right-angled"],
+      "answer": "Right-angled",
+      "type": "classification"
+    },
+    {
+      "question": "What is the value of 8 squared?",
+      "options": ["48", "64", "72", "81"],
+      "answer": "64",
+      "type": "exponentiation"
+    },
+    {
+      "question": "If a bag contains 20 marbles and 1/4 of them are blue, how many marbles are blue?",
+      "options": ["4", "5", "10", "15"],
+      "answer": "5",
+      "type": "multiplication"
+    },
+    {
+      "question": "Calculate 4 × (6 + 2).",
+      "options": ["24", "32", "40", "48"],
+      "answer": "32",
+      "type": "combination"
+    },
+    {
+      "question": "Which of the following numbers is prime?",
+      "options": ["12", "17", "20", "25"],
+      "answer": "17",
+      "type": "classification"
+    },
+    {
+      "question": "If a square has a side length of 12 units, what is its perimeter?",
+      "options": ["36 units", "42 units", "48 units", "54 units"],
+      "answer": "48 units",
+      "type": "addition"
+    },
+    {
+      "question": "Which of the following numbers is divisible by both 4 and 6?",
+      "options": ["18", "24", "30", "36"],
+      "answer": "24",
+      "type": "classification"
+    },
+    {
+      "question": "If a number is rounded to the nearest hundred and is 700, what is the possible range of values for the original number?",
+      "options": ["600-700", "650-750", "700-800", "750-850"],
+      "answer": "650-750",
+      "type": "rounding"
+    },
+    {
+      "question": "Calculate 15 ÷ 3 + 2.",
+      "options": ["3", "7", "8", "9"],
+      "answer": "7",
+      "type": "combination"
+    },
+    {
+      "question": "If a bag contains 30 candies and 2/3 of them are chocolate, how many candies are chocolate?",
+      "options": ["10", "15", "20", "25"],
+      "answer": "20",
+      "type": "multiplication"
+    },
+    {
+      "question": "What is the product of 7 and 6?",
+      "options": ["38", "42", "45", "48"],
+      "answer": "42",
+      "type": "multiplication"
+    },
+    {
+      "question": "If a circle has a radius of 5 cm, what is its circumference? (Use π ≈ 3.14)",
+      "options": ["15.7 cm", "18.85 cm", "31.4 cm", "47.1 cm"],
+      "answer": "31.4 cm",
+      "type": "multiplication"
+    },
+    {
+      "question": "Subtract 4/9 from 1 whole.",
+      "options": ["1/9", "5/9", "7/9", "8/9"],
+      "answer": "5/9",
+      "type": "subtraction"
+    },
+    {
+      "question": "If a triangle has angles measuring 60 degrees, 60 degrees, and 60 degrees, what type of triangle is it?",
+      "options": ["Equilateral", "Isosceles", "Scalene", "Right-angled"],
+      "answer": "Equilateral",
+      "type": "classification"
+    },
+    {
+      "question": "What is the value of 4 cubed?",
+      "options": ["48", "64", "72", "108"],
+      "answer": "64",
+      "type": "exponentiation"
+    },
+    {
+      "question": "If a box contains 12 red balls, 8 blue balls, and 5 green balls, what fraction represents the blue balls?",
+      "options": ["1/3", "2/5", "4/25", "8/25"],
+      "answer": "2/5",
+      "type": "fraction"
+    },
+    {
+      "question": "Calculate 17 + 25 - 8.",
+      "options": ["26", "34", "38", "42"],
+      "answer": "34",
+      "type": "combination"
+    },
+    {
+      "question": "Which of the following numbers is a multiple of both 9 and 12?",
+      "options": ["36", "54", "63", "72"],
+      "answer": "54",
+      "type": "classification"
+    },
+    {
+      "question": "If a bag contains 25 marbles and 1/5 of them are yellow, how many marbles are yellow?",
+      "options": ["3", "5", "7", "10"],
+      "answer": "5",
+      "type": "multiplication"
+    },
+    {
+      "question": "What is the sum of 5/8 and 3/8?",
+      "options": ["4/8", "5/8", "8/8", "10/8"],
+      "answer": "8/8",
+      "type": "addition"
+    },
+    {
+      "question": "If a rectangle has a length of 10 units and a width of 6 units, what is its perimeter?",
+      "options": ["20 units", "26 units", "32 units", "36 units"],
+      "answer": "32 units",
+      "type": "addition"
+    },
+    {
+      "question": "Which of the following numbers is a prime factor of 30?",
+      "options": ["3", "5", "7", "9"],
+      "answer": "5",
+      "type": "classification"
+    },
+    {
+      "question": "If a triangle has angles measuring 90 degrees, 45 degrees, and 45 degrees, what type of triangle is it?",
+      "options": ["Equilateral", "Isosceles", "Scalene", "Right-angled"],
+      "answer": "Isosceles",
+      "type": "classification"
+    },
+    {
+      "question": "What is the value of 9 squared?",
+      "options": ["72", "81", "90", "99"],
+      "answer": "81",
+      "type": "exponentiation"
+    },
+    {
+      "question": "If a bag contains 18 apples and 2/3 of them are green, how many apples are green?",
+      "options": ["6", "8", "10", "12"],
+      "answer": "12",
+      "type": "multiplication"
+    },
+    {
+      "question": "Calculate 14 ÷ 2 + 5.",
+      "options": ["10", "12", "14", "16"],
+      "answer": "12",
+      "type": "combination"
+    },
+    {
+      "question": "If a number is rounded to the nearest ten and is 68, what is the possible range of values for the original number?",
+      "options": ["60-70", "65-75", "70-80", "75-85"],
+      "answer": "65-75",
+      "type": "rounding"
+    }
+  ]
+}

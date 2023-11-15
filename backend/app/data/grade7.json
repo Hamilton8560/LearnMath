@@ -1,0 +1,215 @@
+{
+    "difficulty": 7,
+  "questions": [
+    {
+      "type": "operation",
+      "question": "Simplify: 5 + 2 * (8 - 3)",
+      "options": ["25", "27", "29", "27"],
+      "answer": "27"
+    },
+    {
+      "type": "operation",
+      "question": "Evaluate: 4^2 - 3 * 5",
+      "options": ["4", "11", "16", "11"],
+      "answer": "11"
+    },
+    {
+      "type": "operation",
+      "question": "Solve for x: 2x + 7 = 15",
+      "options": ["4", "5", "6", "4"],
+      "answer": "4"
+    },
+    {
+      "type": "operation",
+      "question": "Simplify: (3/4) * (2/3)",
+      "options": ["1/2", "2/3", "3/4", "1/2"],
+      "answer": "1/2"
+    },
+    {
+      "type": "word_problem",
+      "question": "The sum of two consecutive integers is 47. What are the integers?",
+      "options": ["23, 24", "24, 25", "22, 23", "24, 25"],
+      "answer": "23, 24"
+    },
+    {
+      "type": "word_problem",
+      "question": "A rectangle has a length of 8 cm and a width of 5 cm. Find its area.",
+      "options": ["30 cm²", "35 cm²", "40 cm²", "40 cm²"],
+      "answer": "40 cm²"
+    },
+    {
+      "type": "word_problem",
+      "question": "The cost of 3 notebooks and 2 pencils is $14. If each notebook costs $3 and each pencil costs $2, find the total cost.",
+      "options": ["$14", "$16", "$18", "$14"],
+      "answer": "$14"
+    },
+    {
+      "type": "operation",
+      "question": "Calculate: 2/3 * (5/6) + 1/4",
+      "options": ["13/12", "11/12", "7/6", "13/12"],
+      "answer": "13/12"
+    },
+    {
+      "type": "operation",
+      "question": "Evaluate: 9 ÷ (3/4)",
+      "options": ["12", "12.75", "10.5", "12.75"],
+      "answer": "12.75"
+    },
+    {
+      "type": "word_problem",
+      "question": "A car travels 240 miles in 4 hours. What is its average speed?",
+      "options": ["50 mph", "60 mph", "55 mph", "60 mph"],
+      "answer": "60 mph"
+    },
+    {
+      "type": "word_problem",
+      "question": "The perimeter of a rectangle is 36 cm, and its length is 10 cm. Find the width of the rectangle.",
+      "options": ["8 cm", "9 cm", "7 cm", "8 cm"],
+      "answer": "8 cm"
+    },
+    {
+      "type": "operation",
+      "question": "Simplify: 3 + 2/5 - 1/3",
+      "options": ["3 1/15", "3 2/15", "3 1/5", "3 1/15"],
+      "answer": "3 1/15"
+    },
+    {
+      "type": "operation",
+    "question": "Solve for x: 4x - 7 = 25",
+    "options": ["8", "9", "10", "8"],
+    "answer": "8"
+    },
+    {
+      "type": "word_problem",
+      "question": "A shopkeeper gives a discount of 15% on a shirt priced at $30. How much is the discount?",
+      "options": ["$4.50", "$3.50", "$5.50", "$4.50"],
+      "answer": "$4.50"
+    },
+    {
+      "type": "word_problem",
+      "question": "The sum of three consecutive odd integers is 57. What are the integers?",
+      "options": ["17, 19, 21", "19, 21, 23", "15, 17, 19", "19, 21, 23"],
+      "answer": "17, 19, 21"
+    },
+    {
+      "type": "operation",
+      "question": "Calculate: 2/3 + 5/6",
+      "options": ["11/6", "7/6", "1 1/6", "11/6"],
+      "answer": "11/6"
+    },
+    {
+      "type": "operation",
+      "question": "Evaluate: (2/5)^3",
+      "options": ["8/125", "16/125", "2/25", "8/125"],
+      "answer": "8/125"
+    },
+    {
+      "type": "word_problem",
+      "question": "The ratio of boys to girls in a class is 3:2. If there are 15 girls, how many boys are there?",
+      "options": ["18", "21", "24", "18"],
+      "answer": "18"
+    },
+    {
+      "type": "word_problem",
+      "question": "A train travels 180 miles in 3 hours. What is its average speed?",
+      "options": ["55 mph", "60 mph", "65 mph", "60 mph"],
+      "answer": "60 mph"
+    },
+    {
+      "type": "operation",
+      "question": "Simplify: 4/5 - 1/3",
+      "options": ["7/15", "1/15", "2/5", "7/15"],
+      "answer": "7/15"
+    },
+    {
+      "type": "operation",
+      "question": "Solve for x: 3x + 5 = 20",
+      "options": ["5", "7", "6", "5"],
+      "answer": "5"
+    },
+    {
+      "type": "word_problem",
+      "question": "A box contains 24 chocolates. If 2/3 of them are eaten, how many chocolates are left?",
+      "options": ["8", "10", "12", "8"],
+      "answer": "8"
+    },
+    {
+      "type": "word_problem",
+      "question": "The sum of two consecutive even integers is 82. What are the integers?",
+      "options": ["40, 42", "42, 44", "38, 40", "40, 42"],
+      "answer": "40, 42"
+    },
+    {
+      "type": "operation",
+      "question": "Calculate: 3/4 * (2/5)",
+      "options": ["3/10", "6/20", "3/20", "3/10"],
+      "answer": "3/10"
+    },
+    {
+      "type": "operation",
+      "question": "Evaluate: 2^4 - 3 * 2",
+      "options": ["4", "8", "16", "8"],
+      "answer": "8"
+    },
+    {
+      "type": "word_problem",
+      "question": "A store sells a shirt for $25, making a profit of 20%. What is the cost price of the shirt?",
+      "options": ["$20.83", "$22.50", "$24.50", "$20.83"],
+      "answer": "$20.83"
+    },
+    {
+      "type": "word_problem",
+      "question": "The perimeter of a square is 36 cm. What is the length of one side?",
+      "options": ["9 cm", "8 cm", "10 cm", "9 cm"],
+      "answer": "9 cm"
+    },
+    {
+      "type": "operation",
+      "question": "Simplify: 5/6 + 2/3",
+      "options": ["7/6", "5/3", "1 1/2", "7/6"],
+      "answer": "7/6"
+    },
+    {
+      "type": "operation",
+      "question": "Evaluate: (3/8)^2",
+      "options": ["9/64", "1/16", "9/32", "9/64"],
+      "answer": "9/64"
+    },
+    {
+      "type": "word_problem",
+      "question": "The ratio of the length to the width of a rectangle is 5:3. If the width is 6 cm, what is the length?",
+      "options": ["10 cm", "15 cm", "12 cm", "10 cm"],
+      "answer": "10 cm"
+    },
+    {
+      "type": "word_problem",
+      "question": "A cyclist covers a distance of 45 km in 1.5 hours. What is the speed of the cyclist?",
+      "options": ["30 km/h", "32 km/h", "35 km/h", "30 km/h"],
+      "answer": "30 km/h"
+    },
+    {
+      "type": "operation",
+      "question": "Calculate: 4/5 - 2/3",
+      "options": ["2/15", "7/15", "1/15", "7/15"],
+      "answer": "7/15"
+    },
+    {
+      "type": "operation",
+      "question": "Solve for x: 2x - 9 = 15",
+      "options": ["12", "14", "13", "12"],
+      "answer": "12"
+    },
+    {
+      "type": "word_problem",
+      "question": "A rectangle has a length of 12 cm and a width of 8 cm. Find its area.",
+      "options": ["80 cm²", "96 cm²", "104 cm²", "96 cm²"],
+      "answer": "96 cm²"
+    },
+    {
+      "type": "word_problem",
+      "question": "The cost of 5 pens and 3 notebooks is $27. If each pen costs $2 and each notebook costs $5, find the total cost.",
+      "options": ["$26", "$29", "$30", "$29"],
+      "answer": "$29"
+    }
+  ]
+}
