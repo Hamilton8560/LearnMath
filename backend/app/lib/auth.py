@@ -7,6 +7,7 @@ import logging
 import string
 
 from datetime import datetime
+from pytz import timezone
 from functools import wraps
 from flask import request, jsonify, make_response
 from jwt.exceptions import DecodeError as JWTError
@@ -61,6 +62,7 @@ def admin_token_required(f):
                 raise UnAuthError("Authorization must be a Bearer Token")
             
             token = token[len(PREFIX):]
+            logger.info(SECRET_KEY)
 
             decoded_token = jwt.decode(
                 token, SECRET_KEY, algorithms=["HS256"]
@@ -69,14 +71,14 @@ def admin_token_required(f):
             if decoded_token["type"] != "admin":
                 raise UnAuthError("Invalid token for endpoint")
             
-            if datetime.now() > datetime.fromisoformat(decoded_token["expires"]):
+            if datetime.now(timezone('UTC')) > datetime.fromisoformat(decoded_token["expires"]):
                 raise UnAuthError("Bearer token has expired, please generate a new one")
             
             logger.info("Admin token verified")
             return f(*args, **kwargs)
         
         except JWTError as err:
-            logger.error(err)
+            logger.exception(err)
             return make_response(
                 jsonify({
                     "status" : "error",

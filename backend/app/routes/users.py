@@ -35,14 +35,14 @@ def handle_405(err):
 @cross_origin()
 def email_exists():
     """
-    Endpoint to confirm if a email exists with database. Accepts email address within body.
+    Endpoint to confirm if a email exists with database. Accepts email address within query params.
     Accepts/returns content-type application/json; charset=utf-8. 
 
-    Body:
+    Query params:
         :email (str): valid email address
 
     Returns:
-        :JSON - returns jsons body with status, response
+        :JSON - returns JSON object with status, response
     
     Responses:
         : 200 - successful request, email address exists
@@ -53,7 +53,11 @@ def email_exists():
     """
     logger.info("/api/users/exists - attempting to verify user...")
     try:
-        email = str(json.loads(request.data)["email"]).lower()
+        #validation/extraction
+        if "email" not in request.args:
+            raise HTTPError("Invalid request, missing email within request.query parameters.")
+        
+        email = str(request.args["email"]).lower()
         if not re.match(EMAIL_REGEX, email):
             raise ValueError("Invalid email addess syntax")
         
@@ -71,11 +75,20 @@ def email_exists():
             "exists": True,
             "response": "Email address exists within database"
         }), 200 )
+    
+    except HTTPError as err:
+        logger.error(err)
+        return make_response( jsonify({
+            "status": "error",
+            "created": False,
+            "response": err.args[0]
+        }),
+        400)
     except UnAuthError as err:
         logger.warn(err)
         return make_response( jsonify({
             "status": "error",
-            "auth": False,
+            "exists": False,
             "response": err.args[0]
         }),
         401)
@@ -84,7 +97,7 @@ def email_exists():
         logger.error("Invalid json format from request")
         return make_response( jsonify({
             "status": "error",
-            "response": "Invalid request, request.body must be json format."
+            "response": "Invalid request, request.query must be json format."
         }),
         400)
     except (KeyError, ValueError) as err:
@@ -104,7 +117,7 @@ def email_exists():
         500)
 
 #/api/users/auth
-@users.route("/auth", methods=["GET"])
+@users.route("/auth", methods=["POST"])
 @cross_origin()
 def auth():
     """
@@ -203,6 +216,8 @@ def create_user():
     Accepts/returns content-type application/json; charset=utf-8.
 
     Body:
+        :firstName(str): Users first name
+        :lastName (str): Users last name
         :email (str): valid email address
         :password (str): valid password
 
@@ -313,7 +328,7 @@ def manage_user():
     Endpoint for unlocking/locking a user account, required JWT token within header. 
     Accepts/returns content-type application/json; charset=utf-8.
 
-    Body:
+    Query Params:
         :email (str): valid email address
         :active (bool): True to unlock account, else False
 
@@ -332,32 +347,33 @@ def manage_user():
     logger.info("/api/users/manage - performing admin unlock..")
     try:
         # extract data and validate
-        data = json.loads(request.data)
 
-        if "email" not in data or "active" not in data:
-            raise HTTPError("Missing email or active value with request.body.")
+        if "email" not in request.args or "active" not in request.args:
+            raise HTTPError("Missing email or active value with request.query params.")
         
-        if not re.match(EMAIL_REGEX, data["email"].lower()):
+        if not re.match(EMAIL_REGEX, request.args["email"].lower()):
             raise HTTPError("Invalid email address format.")
         
-        if not isinstance(data['active'], bool):
-            raise HTTPError("Invalid request, body.value active must be type boolean")
+        if str(request.args['active']).lower() not in ['true', 'false']:
+            raise HTTPError("Invalid request, active must be type boolean")
         
+        active = True if str(request.args['active']).lower() == 'true' \
+            else False
         # get user from database, validate
-        cur.execute("SELECT email, password FROM users WHERE email = ?;", (str(data["email"]).lower(),))
+        cur.execute("SELECT email, password FROM users WHERE email = ?;", (str(request.args["email"]).lower(),))
         result = cur.fetchone()
         if not result:
             raise UnAuthError("Email address does not exist.")
         
         # unlock account
-        cur.execute("UPDATE users SET active = ? WHERE email = ?;", (bool(data["active"]), str(data["email"]).lower(),))
+        cur.execute("UPDATE users SET active = ? WHERE email = ?;", (active, str(request.args["email"]).lower(),))
         conn.commit()
 
-        logger.info("Successfully set account %s, active = %s", data["email"], data["active"])
+        logger.info("Successfully set account %s, active = %s", request.args["email"], request.args["active"])
         return make_response( jsonify({
             "status": "success",
-            "active": bool(data["active"]),
-            "response": f"Set {data['email']}, active = {data['active']}"
+            "active": active,
+            "response": f"Set {request.args['email']}, active = {request.args['active']}"
         }),
         200)
     
@@ -405,7 +421,7 @@ def remove_user():
     Endpoint /api/users/remove for removing a user account, required JWT token within header. 
     Accepts/returns content-type application/json; charset=utf-8.
 
-    Body:
+    Query Params:
         :email (str): valid email address
 
     Returns:
@@ -423,19 +439,17 @@ def remove_user():
     logger.info("/api/users/manage - performing admin remove..")
     try:
         # extract data and validate
-        data = json.loads(request.data)
-
-        if "email" not in data or "active" not in data:
-            raise HTTPError("Missing email or active value with request.body.")
+        if "email" not in request.args:
+            raise HTTPError("Missing email or active value with request.query params.")
         
-        if not re.match(EMAIL_REGEX, data["email"].lower()):
+        if not re.match(EMAIL_REGEX, request.args["email"].lower()):
             raise HTTPError("Invalid email address format.")
         
         # get user from database, validate
-        cur.execute("DELETE FROM users WHERE email = ?;", (str(data["email"]).lower(),))
+        cur.execute("DELETE FROM users WHERE email = ?;", (str(request.args["email"]).lower(),))
         conn.commit()
 
-        logger.warn("Removed user %s from database!", data["email"])
+        logger.warn("Removed user %s from database!", str(request.args["email"]))
         return make_response( jsonify({
             "status": "success",
             "removed": True,
