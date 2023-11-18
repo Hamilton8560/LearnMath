@@ -30,7 +30,7 @@ def handle_405(err):
             jsonify({"status": "error", "response" : "Method not allowed"}), 405
         )
 
-# route for confirming user exists
+# /api/users/exists
 @users.route("/exists", methods=["GET"])
 @cross_origin()
 def email_exists():
@@ -102,7 +102,8 @@ def email_exists():
             "response": "iternal service error, please contact an administrator."
         }),
         500)
-    
+
+#/api/users/auth
 @users.route("/auth", methods=["GET"])
 @cross_origin()
 def auth():
@@ -137,7 +138,7 @@ def auth():
             raise UnAuthError("Invalid email address format.")
         
         # get users credentials from database
-        cur.execute("SELECT email, password FROM users WHERE email = ?;", (str(data["email"]).lower(),))
+        cur.execute("SELECT email, password, active FROM users WHERE email = ?;", (str(data["email"]).lower(),))
         result = cur.fetchone()
         if not result:
             raise UnAuthError("Invalid email address or password.")
@@ -180,7 +181,7 @@ def auth():
         return make_response( jsonify({
             "status": "error",
             "auth": False,
-            "response": "Invalid request, issing email and password values with body."
+            "response": "Invalid request, missing email and password values with body."
         }),
         400)
     except Exception as err:
@@ -192,7 +193,8 @@ def auth():
             "response": "iternal service error, please contact an administrator."
         }),
         500)
-    
+
+#/api/users/create 
 @users.route("/create", methods=["POST"])
 @cross_origin()
 def create_user():
@@ -221,14 +223,6 @@ def create_user():
         # extract data, validate
         data = json.loads(request.data)
 
-        if "email" not in data or "password" not in data:
-            raise HTTPError("Missing email and password values with body.")
-        
-        if not re.match(EMAIL_REGEX, data["email"].lower()):
-            raise UnAuthError("Invalid email address format.")
-
-        
-
         #validate body
         required_vals = ["firstName", "lastName", "email", "password"]
         if any(val not in data for val in required_vals):
@@ -255,7 +249,8 @@ def create_user():
         user_id = cur.fetchone()['COUNT()']
 
         cur.execute(
-            "INSERT INTO users VALUES(?, ?, ?, ?, ?);",
+            "INSERT INTO users (firstName, lastName, email, password, active) " +\
+            "VALUES(?, ?, ?, ?, ?);",
             (
                 str(data["firstName"]).lower(),
                 str(data["lastName"]).lower(),
@@ -308,11 +303,12 @@ def create_user():
             "response": "iternal service error, please contact an administrator."
         }),
         500)
-    
+
+#/api/users/manage  
 @users.route("/manage", methods=["POST"])
 @cross_origin()
 @admin_token_required
-def unlock_user():
+def manage_user():
     """
     Endpoint for unlocking/locking a user account, required JWT token within header. 
     Accepts/returns content-type application/json; charset=utf-8.
@@ -399,5 +395,88 @@ def unlock_user():
             "response": "iternal service error, please contact an administrator."
         }),
         500)
+
+#/api/users/remove
+@users.route("/remove", methods=["POST"])
+@cross_origin()
+@admin_token_required
+def remove_user():
+    """
+    Endpoint /api/users/remove for removing a user account, required JWT token within header. 
+    Accepts/returns content-type application/json; charset=utf-8.
+
+    Body:
+        :email (str): valid email address
+
+    Returns:
+        :status (str): success or error
+        :removed (bool | null): True if account is removed, else False or null if unknown
+        :response (str): response reflecting success or error of the request.
+    
+    Responses:
+        : 201 - successful request, user created
+        : 400 - invalid request, request is malformed or email syntax is invalid
+        : 401 - unauthorized
+        : 500 - server error, failure due to unknown reason
+    
+    """
+    logger.info("/api/users/manage - performing admin remove..")
+    try:
+        # extract data and validate
+        data = json.loads(request.data)
+
+        if "email" not in data or "active" not in data:
+            raise HTTPError("Missing email or active value with request.body.")
+        
+        if not re.match(EMAIL_REGEX, data["email"].lower()):
+            raise HTTPError("Invalid email address format.")
+        
+        # get user from database, validate
+        cur.execute("DELETE FROM users WHERE email = ?;", (str(data["email"]).lower(),))
+        conn.commit()
+
+        logger.warn("Removed user %s from database!", data["email"])
+        return make_response( jsonify({
+            "status": "success",
+            "removed": True,
+            "response": "Removed user from database"
+        }),
+        200)
+    
+    except UnAuthError as err:
+        logger.error(err)
+        return make_response( jsonify({
+            "status": "error",
+            "removed": False,
+            "response": err.args[0]
+        }),
+        401)
+    except HTTPError as err:
+        logger.error(err)
+        return make_response( jsonify({
+            "status": "error",
+            "removed": False,
+            "response": err.args[0]
+        }),
+        400)
+    except JSONDecodeError as err:
+        logger.error("Invalid json format from request")
+        return make_response( jsonify({
+            "status": "error",
+            "removed": False,
+            "response": "Invalid request, request.body must be json format."
+        }),
+        400)
+
+    except Exception as err:
+        # fallback
+        logger.exception(err)
+        return make_response( jsonify({
+            "status": "error",
+            "removed": False,
+            "response": "iternal service error, please contact an administrator."
+        }),
+        500)
+
 
 
