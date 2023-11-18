@@ -42,13 +42,10 @@ coverage.xml
 # Rope
 .ropeproject
 
-# Django stuff:
-*.log
-*.pot
 
 # Sphinx documentation
 docs/_build/
 
 # back-end logs
-backend/mathflex.db
-backend/all.log
+.log
+.db

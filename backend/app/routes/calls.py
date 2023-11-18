@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 # limitations for questions
 QUESTIONS_MIN = 1
-QUESTIONS_MAX = 10
+QUESTIONS_MAX = 20
 
 # set up blue prints for backend calls
 url_prefix = "{}{}".format(config.CONTEXT_PATH, '/calls')
@@ -33,6 +33,7 @@ def handle_405(err):
             jsonify({"status": "error", "response" : "Method not allowed"}), 405
         )
 
+#/api/calls/questions
 @calls.route("/questions", methods=["GET", "POST"])
 def get_questions():
     """
@@ -44,9 +45,9 @@ def get_questions():
 
     Method: GET
     Body:
-        :email (str): valid email address of user
-        :difficulty (int): level of difficult, must be 1-8
-        :limit (int): Amount of questions to return
+        :email (str): REQUIRED, valid email address of user.
+        :limit (int): REQUIRED, Amount of questions to return.
+        :difficulty (int): optional difficulty level, random if not specified.
 
     Returns (200):
         :status (str): success or error
@@ -105,15 +106,13 @@ def get_questions():
         # if method GET, get questions
         if request.method == "GET":
             # validate difficulty, limit
-            if "difficulty" not in data:
-                raise HTTPError("Invalid request, missing difficulty value with request.body.")
-            
-            if not isinstance(data['difficulty'], int):
-                raise HTTPError("Invalid request, difficulty must be type integer.")
-            
-            if 0 >= int(data["difficulty"]) < 8:
-                raise HTTPError("Invalid request, difficulty value must be between 1-8.")
-            
+            if "difficulty" in data:
+                if not isinstance(data['difficulty'], int):
+                    raise HTTPError("Invalid request, difficulty must be type integer.")
+                
+                if 0 >= int(data["difficulty"]) < 8:
+                    raise HTTPError("Invalid request, difficulty value must be between 1-8.")
+                
             if "limit" not in data:
                 raise HTTPError("Invalid request, missing limit value within request.body.")
             
@@ -124,14 +123,20 @@ def get_questions():
                 raise HTTPError(f"Invalid request, limit must be between {QUESTIONS_MIN} - {QUESTIONS_MAX}.")
             
             # get questions from database user has not answered
-            cur.execute(
+            query = (
                 "SELECT q.level, q.operation, q.problem, q.options, q.answer "  
                 "FROM questions q "
                 "LEFT JOIN users_questions uq ON uq.questionID = q.ID "
                 "LEFT JOIN users u ON u.ID = uq.userID "
                 "WHERE userID IS NULL "
                 "AND level = ? "
-                "LIMIT ?;",
+                "LIMIT ?;"
+            )
+            if "level" not in data:
+                query = query.replace("AND level = ?", "")
+
+            cur.execute(
+                query,
                 ( int(data["difficulty"]), int(data["limit"]),)
             )
             questions = cur.fetchall()
@@ -186,7 +191,6 @@ def get_questions():
             }),
             201)
             
-
         else:
             return make_response(
             jsonify({"status": "error", "response" : "Method not allowed"}), 405
@@ -237,6 +241,4 @@ def get_questions():
             "response": "iternal service error, please contact an administrator."
         }),
         500)
-
-
 

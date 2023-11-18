@@ -2,8 +2,11 @@ import config
 import os
 import json
 import logging
+import jwt
 
 from flask import current_app as app
+from datetime import datetime, timedelta
+from pytz import timezone
 
 from logging.handlers import RotatingFileHandler
 from app.lib.auth import hash_password
@@ -60,7 +63,10 @@ def get_questions_data():
     
 
 def db_health_check(cur, conn):
-    """ confirm all tables and data exists within table"""
+    """ 
+    confirm all tables and data exists within table, auto populates data.
+    
+    """
     for table in TABLES:
         cur.execute("SELECT name FROM sqlite_master WHERE type='table' AND name=?;", (table,))
         result = cur.fetchone()
@@ -121,3 +127,20 @@ def setup_logging():
 
     app.logger.setLevel(LOGGING_LEVEL[config.LOG_LEVEL])
     return app.logger
+
+def create_token(type:str='admin'):
+    """ 
+    create admin token logic, type:str
+    
+    """
+    token = jwt.encode(
+        {
+            "type": type,
+            "expires": (datetime.now(timezone("UTC")) + timedelta(days=730)).isoformat()
+        },
+        config.SECRET_KEY,
+        "HS256"
+    )
+    
+    print(token)
+    return token

@@ -4,6 +4,7 @@ import config
 import re
 import jwt
 import logging
+import string
 
 from datetime import datetime
 from functools import wraps
@@ -22,7 +23,6 @@ UNLOCK_ENDPOINT = "/api/users/manage"
 #password constraints
 PW_LEN_MIN = 8
 PW_LEN_MAX = 16
-SPECIAL_CHARS = ["!","@","#","$","%","^","&","*","(",")","_","-","+","=","?","<",">", "|"]
 
 def hash_password(password):
     """ Return hashed password with salt"""
@@ -38,7 +38,7 @@ def validate_pw_complexity(password):
         return False, "Password must container 1 lowercase chatacter."
     elif not re.search(r"[0-9]", password):
         return False, "Password must contain 1 numeric character."
-    elif not any(chars in password for chars in SPECIAL_CHARS):
+    elif not any(chars in string.punctuation for chars in password):
         return False, "Password must contain 1 special character."
     else:
         return True, "success"
@@ -66,10 +66,10 @@ def admin_token_required(f):
                 token, SECRET_KEY, algorithms=["HS256"]
             )
 
-            if decoded_token["endpoint_name"] != str(request.url_rule):
+            if decoded_token["type"] != "admin":
                 raise UnAuthError("Invalid token for endpoint")
             
-            if datetime.now() > datetime.fromisoformat(decoded_token["expires_at"]):
+            if datetime.now() > datetime.fromisoformat(decoded_token["expires"]):
                 raise UnAuthError("Bearer token has expired, please generate a new one")
             
             logger.info("Admin token verified")
