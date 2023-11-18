@@ -27,7 +27,7 @@ Must have a valid python interpreter. Install the following libraries using `pip
 ```http
   GET /api/users/exists - Validate if a user exists.
 ```
-*Request.body:*
+*Request.query:*
 | Parameter | Type     | Description                           |
 | :-------- | :------- | :--------------------------------     |
 | `email`   | `string` | **Required**. Email address of a user |
@@ -35,7 +35,7 @@ Must have a valid python interpreter. Install the following libraries using `pip
 
 ### Users Authentication
 ```http
-  GET /api/users/auth - Authenticate a user with email and password.
+  POST /api/users/auth - Authenticate a user with email and password.
 ```
 *Request.body:*
 | Parameter | Type     | Description                           |
@@ -45,23 +45,25 @@ Must have a valid python interpreter. Install the following libraries using `pip
 
 ### Users Create
 ```http
-  GET /api/users/create - Create a user within database.
+  POST /api/users/create - Create a user within database.
 ```
 *Request.body:*
-| Parameter | Type     | Description                           |
-| :-------- | :------- | :--------------------------------     |
-| `email`   | `string` | **Required**. Email address of a user.|
-| `password`| `string` | **Required**. Password of user.       |
+| Parameter | Type     | Description                            |
+| :--------  | :------- | :--------------------------------     |
+| `firstName`| `string` | **Required**. First name of user      |
+| `lastName `| `string` | **Required**. Last name of user       |
+| `email`    | `string` | **Required**. Email address of a user.|
+| `password` | `string` | **Required**. Password of user.       |
 
 ### Users Manage
 ```http
-  GET /api/users/manage - Set active status to True/False for Unlock/Locking a user account.
+  POST /api/users/manage - Set active status to True/False for Unlock/Locking a user account.
 ```
 *Request.headers:*
 | Parameter        | Type      | Description                             |
 | :--------        | :-------  | :--------------------------------       |
 | `Autorization`   | `bearer`  | **Required**. Admin bearer token.       |
-*Request.body:*
+*Request.query:*
 | Parameter | Type      | Description                             |
 | :-------- | :-------  | :--------------------------------       |
 | `email`   | `string`  | **Required**. Email address of a user.  |
@@ -69,7 +71,7 @@ Must have a valid python interpreter. Install the following libraries using `pip
 
 ### Users Remove
 ```http
-  GET /api/users/manage - Set active status to True/False for Unlock/Locking a user account.
+  POST /api/users/manage - Set active status to True/False for Unlock/Locking a user account.
 ```
 *Request.headers:*
 | Parameter        | Type      | Description                             |
@@ -77,7 +79,7 @@ Must have a valid python interpreter. Install the following libraries using `pip
 | `Autorization`   | `bearer`  | **Required**. Admin bearer token.       |
 
 
-*Request.body:*
+*Request.query:*
 | Parameter | Type      | Description                             |
 | :-------- | :-------  | :--------------------------------       |
 | `email`   | `string`  | **Required**. Email address of a user.  |
@@ -86,7 +88,7 @@ Must have a valid python interpreter. Install the following libraries using `pip
 ```http
   GET /api/calls/questions - Retrieve questions from database for user.
 ```
-*Request.body:*
+*Request.query:*
 | Parameter   | Type       | Description                                         |
 | :--------   | :-------   | :-------------------------------------------        |
 | `email`     | `string`   | **Required**. Email address of a user.              |

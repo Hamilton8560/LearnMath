@@ -44,7 +44,7 @@ def get_questions():
     Accepts/returns content-type application/json; charset=utf-8.
 
     Method: GET
-    Body:
+    Query Params:
         :email (str): REQUIRED, valid email address of user.
         :limit (int): REQUIRED, Amount of questions to return.
         :difficulty (int): optional difficulty level, random if not specified.
@@ -83,43 +83,41 @@ def get_questions():
     """
     
     logger.info("[%s] /api/calls/questions - performing questions operations..", str(request.method))
+    logger.info("Test %s %s", str(request.view_args), str(request.args))
     try:
         # extract data, validate email
-        logger.info(request.data)
-        data = json.loads(request.data)
-
-        if "email" not in data:
+        if "email" not in request.args:
             raise HTTPError("Invalid request, missing email value with request.body.")
         
-        if not isinstance(data["email"], str):
+        if not isinstance(request.args["email"], str):
             raise HTTPError("Invalid request, email must be type string.")
         
-        if not re.match(EMAIL_REGEX, data["email"].lower()):
+        if not re.match(EMAIL_REGEX, request.args["email"].lower()):
             raise HTTPError("Invalid request, invalid email address format.")
         
         # get user from database, validate
-        cur.execute("SELECT email, password FROM users WHERE email = ?;", (str(data["email"]).lower(),))
+        cur.execute("SELECT email, password FROM users WHERE email = ?;", (str(request.args["email"]).lower(),))
         user = cur.fetchone()
         if not user:
             raise UnAuthError("Email address does not exist.")
         
-        # if method GET, get questions
+        # if method POST, get requestions
         if request.method == "GET":
             # validate difficulty, limit
-            if "difficulty" in data:
-                if not isinstance(data['difficulty'], int):
+            if "difficulty" in request.args:
+                if not str(request.args['difficulty']).isdigit():
                     raise HTTPError("Invalid request, difficulty must be type integer.")
                 
-                if 0 >= int(data["difficulty"]) < 8:
+                if 0 >= int(request.args["difficulty"]) < 8:
                     raise HTTPError("Invalid request, difficulty value must be between 1-8.")
                 
-            if "limit" not in data:
+            if "limit" not in request.args:
                 raise HTTPError("Invalid request, missing limit value within request.body.")
             
-            if not isinstance(data["limit"], int):
+            if not str(request.args["limit"]).isdigit():
                 raise HTTPError("Invalid request, limit must be type integer.")
             
-            if QUESTIONS_MIN >= int(data["limit"]) < QUESTIONS_MAX:
+            if QUESTIONS_MIN >= int(request.args["limit"]) < QUESTIONS_MAX:
                 raise HTTPError(f"Invalid request, limit must be between {QUESTIONS_MIN} - {QUESTIONS_MAX}.")
             
             # get questions from database user has not answered
@@ -132,13 +130,16 @@ def get_questions():
                 "AND level = ? "
                 "LIMIT ?;"
             )
-            if "level" not in data:
+            
+            # modify query and args depending on parameters
+            if "level" not in request.args:
                 query = query.replace("AND level = ?", "")
+                args = ( int(request.args["limit"]),)
+            else:
+                args = (( int(request.args["difficulty"]), int(request.args["limit"]),))
 
-            cur.execute(
-                query,
-                ( int(data["difficulty"]), int(data["limit"]),)
-            )
+            # get questions from databse
+            cur.execute(query,args)
             questions = cur.fetchall()
             if not questions:
                 raise HTTPError("Unable to collect questions.")
@@ -160,8 +161,12 @@ def get_questions():
         
         # POST operations
         elif request.method == "POST":
+
+            #extract data
+            data = json.loads(request.data)
+            
             # validations
-            if "question" not in data:
+            if "question" not in request.args:
                 raise HTTPError("Invalid request, question must be within request.body.")
             
             if not isinstance(data["question"], str):
