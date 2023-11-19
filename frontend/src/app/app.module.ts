@@ -8,10 +8,17 @@ import { RouterModule } from '@angular/router';
 import { CardModule } from 'primeng/card';
 import {ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { ToastModule } from 'primeng/toast';
+import { MessagesModule } from 'primeng/messages';
+import { MessageService } from 'primeng/api';
+
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -20,9 +27,14 @@ import { InputTextModule } from 'primeng/inputtext';
     RouterModule,
     CardModule,
     ReactiveFormsModule,
-    InputTextModule
+    InputTextModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastModule,
+    MessagesModule
+    
   ],
-  providers: [],
+  providers: [ MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

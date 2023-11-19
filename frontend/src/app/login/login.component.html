@@ -15,7 +15,7 @@
 
     <input type="password" placeholder="password" pInputText formControlName="password"/>
 </div>
-<p-button label="Log in" type="submit"></p-button>
+<p-button [disabled]="loginForm.invalid" label="Log in" type="submit"></p-button>
         
       </form>
       
@@ -30,15 +30,17 @@
             <a href="" *ngIf="isAccountCreate" (click)="createAccount()" style="color:black">Login To Existing Account</a>
            
           </p>
-          <form [formGroup]="registerForm" (ngSubmit)="createAccount()">
+          <form [formGroup]="registerForm" (ngSubmit)="newUser()">
     
     <div class="card flex justify-content-center">
+        <input type="text" placeholder="First Name" pInputText formControlName="firstName"/>
+        <input type="text" placeholder="Last Name" pInputText formControlName="lastName"/>
         <input type="email" placeholder="Email" pInputText formControlName="email"/>
     
         <input type="password" placeholder="Password" pInputText formControlName="password"/>
         <input type="password" placeholder="Confirm Password" pInputText formControlName="passwordConfirm"/>
     </div>
-    <p-button label="Sign Up" type="submit"></p-button>
+    <p-button [disabled]="registerForm.value.password != registerForm.value.passwordConfirm || registerForm.value.password === '' " label="Sign Up" type="submit"></p-button>
             
           </form>
           
