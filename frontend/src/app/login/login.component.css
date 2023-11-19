@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center; /* aligns children (the div) horizontally */
     align-items:center;
-    height:100vh;
+    height:50vh;
 }
 .container{
     text-align: center;
@@ -29,7 +29,9 @@
 }
 
 input[type="email"], 
-input[type="password"] {
+input[type="password"],
+input[type="text"]
+{
     width: 250px;
 
 }
