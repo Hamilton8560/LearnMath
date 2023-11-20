@@ -6,18 +6,24 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from '../app/login/login.component'
 import { RouterModule } from '@angular/router';
 import { CardModule } from 'primeng/card';
-import {ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ToastModule } from 'primeng/toast';
 import { MessagesModule } from 'primeng/messages';
 import { MessageService } from 'primeng/api';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TestComponent } from './test/test.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    DashboardComponent,
+    TestComponent,
   
   ],
   imports: [
@@ -31,7 +37,8 @@ import { MessageService } from 'primeng/api';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastModule,
-    MessagesModule
+    MessagesModule,
+    FormsModule
     
   ],
   providers: [ MessageService],

@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: flex-start; /* Align items to the start of the container */
+  }
+  
+  .flex{
+    font-size: 40px;
+    color: #1361A0;
+  }
+
+  img {
+    
+    height: 75px;
+    margin-top:-10px;
+   margin-right: 15px;
+    mix-blend-mode: multiply;
+    flex-shrink: 0; /* Prevent the image from shrinking */
+  }
+  
+  h1 {
+    margin: 0;
+    margin-top: -15px;
+    font-size: 40px;
+    display: flex;
+ 
+  }
+  
+  :host ::ng-deep .p-card {
+    height: 100px;
+    background-color: #EEEBEB;
+  }
+  

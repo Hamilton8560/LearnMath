@@ -1,0 +1,109 @@
+.container {
+    border-radius: 5px;
+    background-color: #4281B3;
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.empty {
+
+    height: 50px;
+    margin: 0 auto;
+}
+
+.submission {
+    text-align: center;
+}
+
+.title{
+    background-color: rgb(248, 248, 248);
+    font-size: 24px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    padding: 20px;
+    color: #3474a8;
+    text-align: center;
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 5px;
+}
+
+:host ::ng-deep .p-button{
+    font-family: 'Roboto';
+    color: #1b3c58;
+    background-color:#f0f0f0;
+    border-radius: 30px;
+    font-size: 18px;
+    margin: 20px;
+    border: 2px solid #a2c1db;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+
+}
+
+:host ::ng-deep .p-button:hover {
+    
+    background-color: #C57D3A;
+    border: 2px solid #C57D3A;
+}
+
+
+.problem-set {
+    background-color: #4281B3;
+    padding: 20px;
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+
+.problem {
+    padding-left: 15px;
+    padding-right: 15px;
+    color: aliceblue;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-family: 'Roboto';
+}
+
+
+
+.separator {
+    width: 95%;
+    height: 2px;
+    margin: 0 auto; /* Center the container horizontally */
+    background-color: #ffffff;
+}
+
+h2 {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+    
+}
+
+p {
+    text-align: center;
+    font-size: 22px;
+    
+}
+
+
+
+
+input[type="text"] {
+    color: #C57D3A; 
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid #a2c1db;
+    font-family: 'Roboto';
+    font-size: 18px;
+
+  }
+  
+  input[type="text"]::placeholder {
+    
+    color: #c3c3c3; 
+  }
