@@ -39,6 +39,7 @@ constructor(private router:Router, private userService: UserService, private mes
     {
       this.messageService.add({ severity:'success', summary: 'Success', detail: 'Login Successful'})
       console.log("Login Successful:", response);
+      this.router.navigate(['test'])
     },
     error => 
     {
