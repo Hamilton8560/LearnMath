@@ -35,6 +35,7 @@ def handle_405(err):
 
 #/api/calls/questions
 @calls.route("/questions", methods=["GET", "POST"])
+@cross_origin()
 def get_questions():
     """
     Endpoint: /api/calls/questions
