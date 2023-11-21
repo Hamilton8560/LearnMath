@@ -1,5 +1,5 @@
 from flask import Flask, make_response, jsonify, Response
-from flask_cors import cross_origin
+from flask_cors import CORS
 import sqlite3
 import os
 
@@ -20,6 +20,9 @@ with app.app_context():
     # add logging handlers
     logger = setup_logging()
     logger.info("DB and logging setup")
+
+# enable cross origin
+CORS(app)
 
 #check db
 db_health_check(cur, conn)
