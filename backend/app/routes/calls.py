@@ -66,7 +66,7 @@ def get_questions():
     Body:
         :email (str): valid email address of user,
         :question (str): question that the user answered
-        :answer (bool): True if the user answered correctly, else false
+        :correct (bool): True if the user answered correctly, else false
     
     Returns(201):
         :status (str): success or error
@@ -87,7 +87,7 @@ def get_questions():
     logger.info("[%s] /api/calls/questions - performing questions operations..", str(request.method))
     logger.info("Test %s %s", str(request.view_args), str(request.args))
     try:
-        # if method POST, get requestions
+        # if method GET, get requestions
         if request.method == "GET":
             # extract data, validate email
             if "email" not in request.args:
@@ -135,11 +135,11 @@ def get_questions():
             )
             
             # modify query and args depending on parameters
-            if "level" not in request.args:
+            if "difficulty" not in request.args:
                 query = query.replace("AND level = ?", "")
                 args = ( int(request.args["limit"]),)
             else:
-                args = (( int(request.args["difficulty"]), int(request.args["limit"]),))
+                args = ( int(request.args["difficulty"]), int(request.args["limit"]),)
 
             # get questions from databse
             cur.execute(query,args)
@@ -177,7 +177,7 @@ def get_questions():
                 raise HTTPError("Invalid request, invalid email address format.")
             
             # get user from database, validate
-            cur.execute("SELECT ID FROM users WHERE email = ?;", (str(data["email"]).lower(),))
+            cur.execute("SELECT ID, email FROM users WHERE email = ?;", (str(data["email"]).lower(),))
             user = cur.fetchone()
             if not user:
                 raise UnAuthError("Email address does not exist.")
@@ -189,10 +189,10 @@ def get_questions():
             if not isinstance(data["question"], str):
                 raise HTTPError("Invalid request, question value must be type string.")
             
-            if "answer" not in data:
+            if "correct" not in data:
                 raise HTTPError("Invalid request, answer must be within request.body.")
             
-            if not isinstance(data["answer"], bool):
+            if not isinstance(data["correct"], bool):
                 raise HTTPError("Invalid request, answer value must be type boolean.")
             
             # get answers ID
@@ -204,9 +204,9 @@ def get_questions():
             
             # update users_questions table
             cur.execute("INSERT INTO users_questions (userID, questionID, correct) VALUES (?, ?, ?);",
-                (user["ID"], question["ID"], data["answer"],))
+                (user["ID"], question["ID"], data["correct"],))
             conn.commit()
-            logger.info("Successfully inserted userID %s and %s questionsID into users_questions table.")
+            logger.info("Successfully inserted userID %s and %s questionsID into users_questions table.", user["ID"], question["ID"])
             return make_response( jsonify({
                 "status": "success",
                 "response": "successfully updated database with users answer",
