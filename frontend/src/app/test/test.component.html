@@ -1,8 +1,9 @@
-<div class="empty"></div>
+<div  class="empty"></div>
 
-<div class="container">
+<div *ngIf="answered == false" class="container">
   <div class="title">
-    Test (Easy)
+    <h4>Test (Easy)</h4> 
+
   </div>
 
   <div class="problem-set">
@@ -20,3 +21,5 @@
     </form>
   </div>
 </div>
+
+<app-results *ngIf="answered" [userAnswers]="userAnswers" [resultsData]="data"></app-results>

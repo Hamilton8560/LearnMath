@@ -15,6 +15,8 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageService } from 'primeng/api';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TestComponent } from './test/test.component';
+import { ResultsComponent } from './results/results.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -24,6 +26,8 @@ import { TestComponent } from './test/test.component';
     LoginComponent,
     DashboardComponent,
     TestComponent,
+    ResultsComponent,
+    HomeComponent,
   
   ],
   imports: [

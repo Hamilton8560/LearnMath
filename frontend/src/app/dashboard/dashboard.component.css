@@ -30,4 +30,20 @@
     height: 100px;
     background-color: #EEEBEB;
   }
-  
+  .logout a {
+    color: #1361A0;
+    font-size: x-large;
+    text-decoration: none; 
+  }
+  .logout :hover{
+    cursor: pointer;
+    text-decoration: underline;
+
+  }
+
+  .logout {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+    margin-top: -60px;
+  }

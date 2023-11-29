@@ -1,0 +1,26 @@
+<div  class="empty"></div>
+
+<div class="container">
+  <div class="title">
+    <h3>Results</h3> 
+  
+    <span>
+        {{grade}}%
+    </span>
+  </div>
+
+<div class="problem-set">
+    <div *ngFor="let item of resultsData; let i = index" class="problem">
+      <h2>{{ i + 1 }}.</h2>
+      <p>{{ item.question }}</p>
+      <p>User Answer: {{ userAnswers[i] }}</p>
+      <p>Correct: {{ item.correct }}</p> 
+        <span *ngIf="!item.correct"><i class="pi pi-times" style="color: red"></i></span>
+        <span *ngIf="item.correct"><i class="pi pi-check" style="color: green"></i></span>
+      <div class="separator"></div>
+    </div>
+    <div class="submission">
+    <p-button label="Try Again?" type="button" (click)="refreshPage()"></p-button>
+    </div>
+  </div>
+  
