@@ -103,5 +103,5 @@ Must have a valid python interpreter. Install the following libraries using `pip
 | :--------   | :------- | :---------------------------------------------------|
 | `email`     | `string` | **Required**. Email address of a user.              |
 | `question`  | `string` | **Required**. Question user answered.               |
-| `correct`   | `boolean`| **Required**. True/False if user answered correctly.|
+| `answer`    | `boolean`| **Required**. True/False if user answered correctly.|
 

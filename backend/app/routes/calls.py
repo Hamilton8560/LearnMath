@@ -1,6 +1,7 @@
 import config
 import json
 import re
+import random
 
 from app                import app, conn, cur
 from flask              import Blueprint, request, make_response, jsonify
@@ -65,7 +66,7 @@ def get_questions():
     Body:
         :email (str): valid email address of user,
         :question (str): question that the user answered
-        :correct (bool): True if the user answered correctly, else false
+        :answer (bool): True if the user answered correctly, else false
     
     Returns(201):
         :status (str): success or error
@@ -86,24 +87,24 @@ def get_questions():
     logger.info("[%s] /api/calls/questions - performing questions operations..", str(request.method))
     logger.info("Test %s %s", str(request.view_args), str(request.args))
     try:
-        # extract data, validate email
-        if "email" not in request.args:
-            raise HTTPError("Invalid request, missing email value with request.body.")
-        
-        if not isinstance(request.args["email"], str):
-            raise HTTPError("Invalid request, email must be type string.")
-        
-        if not re.match(EMAIL_REGEX, request.args["email"].lower()):
-            raise HTTPError("Invalid request, invalid email address format.")
-        
-        # get user from database, validate
-        cur.execute("SELECT email, password FROM users WHERE email = ?;", (str(request.args["email"]).lower(),))
-        user = cur.fetchone()
-        if not user:
-            raise UnAuthError("Email address does not exist.")
-        
         # if method POST, get requestions
         if request.method == "GET":
+            # extract data, validate email
+            if "email" not in request.args:
+                raise HTTPError("Invalid request, missing email value with request.args.")
+            
+            if not isinstance(request.args["email"], str):
+                raise HTTPError("Invalid request, email must be type string.")
+            
+            if not re.match(EMAIL_REGEX, request.args["email"].lower()):
+                raise HTTPError("Invalid request, invalid email address format.")
+            
+            # get user from database, validate
+            cur.execute("SELECT email, password FROM users WHERE email = ?;", (str(request.args["email"]).lower(),))
+            user = cur.fetchone()
+            if not user:
+                raise UnAuthError("Email address does not exist.")
+            
             # validate difficulty, limit
             if "difficulty" in request.args:
                 if not str(request.args['difficulty']).isdigit():
@@ -129,6 +130,7 @@ def get_questions():
                 "LEFT JOIN users u ON u.ID = uq.userID "
                 "WHERE userID IS NULL "
                 "AND level = ? "
+                "ORDER BY RANDOM() "
                 "LIMIT ?;"
             )
             
@@ -162,12 +164,26 @@ def get_questions():
         
         # POST operations
         elif request.method == "POST":
-
-            #extract data
+            # extract data, validate email
             data = json.loads(request.data)
+
+            if "email" not in data["email"]:
+                raise HTTPError("Invalid request, missing email value with request.body.")
+            
+            if not isinstance(data["email"], str):
+                raise HTTPError("Invalid request, email must be type string.")
+            
+            if not re.match(EMAIL_REGEX, str(data["email"]).lower()):
+                raise HTTPError("Invalid request, invalid email address format.")
+            
+            # get user from database, validate
+            cur.execute("SELECT ID FROM users WHERE email = ?;", (str(data["email"]).lower(),))
+            user = cur.fetchone()
+            if not user:
+                raise UnAuthError("Email address does not exist.")
             
             # validations
-            if "question" not in request.args:
+            if "question" not in data:
                 raise HTTPError("Invalid request, question must be within request.body.")
             
             if not isinstance(data["question"], str):
@@ -187,7 +203,8 @@ def get_questions():
                 raise MathFlexOperationError("Unable to locate question within database")
             
             # update users_questions table
-            cur.execute("INSERT INTO user_questions (usersID, questionsID) VALUES (?, ?);")
+            cur.execute("INSERT INTO users_questions (userID, questionID, correct) VALUES (?, ?, ?);",
+                (user["ID"], question["ID"], data["answer"],))
             conn.commit()
             logger.info("Successfully inserted userID %s and %s questionsID into users_questions table.")
             return make_response( jsonify({
