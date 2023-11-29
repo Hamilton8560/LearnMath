@@ -38,7 +38,7 @@ class HealthStatusCheck(TestCase):
 # test users API calls to /api/users/create API endpoint
 class UsersCreatedCheck(TestCase):
     """
-    /api/usrs/create
+    /api/users/create
 
     Endpoint is used for account creation. Expecting firstName, lastName, email and password within 
     request body. Account email addresses are unique and passwords constraints require 1 uppercase and lowercase characters, 
@@ -113,7 +113,9 @@ class UsersCreatedCheck(TestCase):
         data = json.dumps({
             "firstName": "bar",
             "lastName": "baz",
-            "email": "bar.baz@email.com",
+            "email": "bar.baz" + "".join( 
+                random.sample(range(0,9), 7)) \
+                + "@email.com",
             "password": "Test1!"
         })
         result = requests.post("http://127.0.0.1:3000/api/users/create", data=data)
@@ -233,15 +235,59 @@ class UsersCreatedCheck(TestCase):
     
     # test method not allowed
     def test_status_codes_405(self):
-        result = requests.put("http://127.0.0.1:3000/api/health/status")
+        result = requests.delete("http://127.0.0.1:3000/api/users/create")
         assert result.status_code == 405
         assert "status" in result.json()
         assert "response" in result.json()
         assert result.json()["status"] == "error"
         assert result.json()["response"] == "Method not allowed"
 
+class CallsQuestions(TestCase):
+    """
+    /api/calls/questions
 
+    End point is used to retrieve questions or insert users answers into the database. 
+    
+    The GET method is used to retrieve questions from the database requiring email and limit within the query. 
 
+    The POST method is used to insert answered questions within the database requiring users 
+    email address, question and correct response within database.
+
+    """
+
+    def test_status_codes_200(self):
+        # Test GET method to retrieve questions questions
+        params = {
+            "email" : "foo.bar@email.com",
+            "limit": 5
+        }
+        result = requests.get("http://127.0.0.1:3000/api/calls/questions", params=params)
+        assert result.status_code == 200
+        assert "status" in result.json()
+        assert "length" in result.json()
+        assert "questions" in result.json()
+        assert "response" in result.json()
+        assert result.json()["status"] == "success"
+        assert result.json()["length"] == params["limit"]
+        assert result.json()["response"] == "successfully generated questions"
+
+    # test not found due to incorrect url
+    def test_status_codes_404(self):
+        result = requests.get("http://127.0.0.1:3000/api/calls/")
+        assert result.status_code == 404
+        assert "status" in result.json()
+        assert "response" in result.json()
+        assert result.json()["status"] == "error"
+        assert result.json()["response"] == "Not found" 
+    
+    # test method not allowed
+    def test_status_codes_405(self):
+        result = requests.put("http://127.0.0.1:3000/api/calls/questions")
+        assert result.status_code == 405
+        assert "status" in result.json()
+        assert "response" in result.json()
+        assert result.json()["status"] == "error"
+        assert result.json()["response"] == "Method not allowed"
 
 if __name__ == "__main__":
     unittest.main()
