@@ -105,3 +105,12 @@ Must have a valid python interpreter. Install the following libraries using `pip
 | `question`  | `string` | **Required**. Question user answered.               |
 | `correct`   | `boolean`| **Required**. True/False if user answered correctly.|
 
+```http
+  POST /api/calls/results - Get all questions and total results based upon user.
+```
+*Request.query:*
+| Parameter   | Type     | Description                                         |
+| :--------   | :------- | :---------------------------------------------------|
+| `email`     | `string` | **Required**. Email address of a user.              |
+
+
