@@ -71,10 +71,7 @@ def get_questions():
     Returns(201):
         :status (str): success or error
         :response (str): response reflecting success or error of the request.
-        :results(object | null): results object or null
-            :questions (array): array containing question objects
-            :totals (object): object containing total answered, correct, incorrect and grade
-            
+        :updated(bool | null): True if the database was updated or null
     
     Responses:
         : 200 - successful request
@@ -213,7 +210,7 @@ def get_questions():
                   "WHERE userID = ? " +\
                   "AND questionID = ? " +\
                 ") as \"exists\";",
-                ( data["correct"], user["ID"], question["ID"], ) 
+                ( user["ID"], question["ID"], ) 
             )
 
             # if entry exists, update entry else insert new entry
@@ -223,7 +220,7 @@ def get_questions():
                     "SET correct = ? " +\
                     "WHERE userID = ? " +\
                     "AND questionID = ?;",
-                    (user["ID"], ) 
+                    (user["ID"], question["ID"], data["correct"]) 
                 )
                 conn.commit()
                 logger.info("Successfully updated userID %s and %s questionsID into users_questions table.", user["ID"], question["ID"])
@@ -311,14 +308,10 @@ def get_results():
     Returns (200):
         :status (str): success or error
         :response (str): response reflecting success or error of the request.
-        :length (int): number of questions returned
-        :questions (array[objects | null]): array of question objects or empty.
-            *level(int): level of difficulty 
-            *operation (str): type of math operation
-            *problem (str): question for user
-            *options(array[str]): array of string options for user
-            *answer(str): the correct answer to the question
-    
+        :results(object | null): results object or null
+            :questions (array): array containing question objects
+            :totals (object): object containing total answered, correct, incorrect and grade
+            
     Responses:
         : 200 - successful request
         : 201 - successful request
