@@ -71,7 +71,9 @@ def get_questions():
     Returns(201):
         :status (str): success or error
         :response (str): response reflecting success or error of the request.
-        :updated(bool | null): True if the database was updated or null
+        :results(object | null): results object or null
+            :questions (array): array containing question objects
+            :totals (object): object containing total answered, correct, incorrect and grade
             
     
     Responses:
@@ -128,8 +130,9 @@ def get_questions():
                 "FROM questions q "
                 "LEFT JOIN users_questions uq ON uq.questionID = q.ID "
                 "LEFT JOIN users u ON u.ID = uq.userID "
-                "WHERE userID IS NULL "
-                "AND level = ? "
+                "WHERE ( uq.userID IS NULL "
+                "OR uq.correct IS FALSE ) "
+                "AND q.level = ? "
                 "ORDER BY RANDOM() "
                 "LIMIT ?;"
             )
@@ -202,11 +205,35 @@ def get_questions():
             if not question:
                 raise MathFlexOperationError("Unable to locate question within database")
             
-            # update users_questions table
-            cur.execute("INSERT INTO users_questions (userID, questionID, correct) VALUES (?, ?, ?);",
-                (user["ID"], question["ID"], data["correct"],))
-            conn.commit()
-            logger.info("Successfully inserted userID %s and %s questionsID into users_questions table.", user["ID"], question["ID"])
+            # check if user has already answered the question
+            cur.execute(
+                "SELECT EXISTS ( " +\
+                  "SELECT rowid " +\
+                  "FROM users_questions " +\
+                  "WHERE userID = ? " +\
+                  "AND questionID = ? " +\
+                ") as \"exists\";",
+                ( data["correct"], user["ID"], question["ID"], ) 
+            )
+
+            # if entry exists, update entry else insert new entry
+            if cur.fetchone()["exists"]:
+                cur.execute(
+                    "UPDATE users_questions " +\
+                    "SET correct = ? " +\
+                    "WHERE userID = ? " +\
+                    "AND questionID = ?;",
+                    (user["ID"], ) 
+                )
+                conn.commit()
+                logger.info("Successfully updated userID %s and %s questionsID into users_questions table.", user["ID"], question["ID"])
+
+            else:
+                cur.execute("INSERT INTO users_questions (userID, questionID, correct) VALUES (?, ?, ?);",
+                    (user["ID"], question["ID"], data["correct"],))
+                conn.commit()
+                logger.info("Successfully inserted userID %s and %s questionsID into users_questions table.", user["ID"], question["ID"])
+
             return make_response( jsonify({
                 "status": "success",
                 "response": "successfully updated database with users answer",
@@ -265,3 +292,151 @@ def get_questions():
         }),
         500)
 
+
+#/api/calls/questions
+@calls.route("/results", methods=["GET"])
+@cross_origin()
+def get_results():
+    """
+    Endpoint: /api/calls/results
+
+    Description: 
+    Endpoint for retrieving all questions answered from a user. Requires email within arguments. 
+    Accepts/returns content-type application/json; charset=utf-8.
+
+    Method: GET
+    Query Params:
+        :email (str): REQUIRED, valid email address of user.
+
+    Returns (200):
+        :status (str): success or error
+        :response (str): response reflecting success or error of the request.
+        :length (int): number of questions returned
+        :questions (array[objects | null]): array of question objects or empty.
+            *level(int): level of difficulty 
+            *operation (str): type of math operation
+            *problem (str): question for user
+            *options(array[str]): array of string options for user
+            *answer(str): the correct answer to the question
+    
+    Responses:
+        : 200 - successful request
+        : 201 - successful request
+        : 400 - invalid request
+        : 405 - method not allowqed
+        : 401 - unauthorized
+        : 500 - server error
+    
+    """
+    try:
+        # validate query params
+        if "email" not in request.args:
+            raise HTTPError("Invalid request, missing email value with request.args.")
+                
+        if not isinstance(request.args["email"], str):
+            raise HTTPError("Invalid request, email must be type string.")
+        
+        if not re.match(EMAIL_REGEX, request.args["email"].lower()):
+            raise HTTPError("Invalid request, invalid email address format")
+        
+        # get user from database, validate
+        cur.execute("SELECT ID, email FROM users WHERE email = ?;", (str(request.args["email"]).lower(),))
+        user = cur.fetchone()
+        if not user:
+            raise UnAuthError("Email address does not exist.")
+
+        # get total questions answer, correct, incorrect and overall grade
+        cur.execute(
+            "WITH cte as ( SELECT  " +\
+            "COUNT (*) total_answered, " +\
+            "COUNT(CASE WHEN correct IS TRUE THEN 1 ELSE NULL END) total_correct, " +\
+            "COUNT(CASE WHEN correct IS FALSE THEN 1 ELSE NULL END) total_incorrect " +\
+            "FROM users_questions uq " +\
+            "WHERE uq.userID = ? " +\
+            ") SELECT *, " +\
+            "ROUND( " +\
+            "( CAST (total_answered AS REAL) - CAST (total_incorrect AS REAL) ) " +\
+            "/ CAST (total_answered AS REAL) * 100, 2) total_grade " +\
+            "FROM cte; ",
+            (user["ID"],) 
+        )
+        totals = cur.fetchone()
+
+        # if totals does not exist, user has not answered a questiom, return no results
+        if not totals:
+            return make_response( jsonify({
+                "status": "success",
+                "response": f"{user['email']} has not answered any questions.",
+                "results": None
+            }),
+            200 )
+
+        # get total correct, incorrect based upon diffculty
+        cur.execute(
+            "SELECT DISTINCT q.level difficulty, " +\
+            "COUNT(uq.correct) total,  " +\
+            "COUNT(CASE WHEN correct IS TRUE THEN 1 ELSE NULL END) correct, " +\
+            "COUNT(CASE WHEN correct IS FALSE THEN 1 ELSE NULL END) incorrect " +\
+            "FROM users_questions uq " +\
+            "JOIN questions q ON q.ID = uq.questionID " +\
+            "WHERE uq.userID = ? " +\
+            "GROUP BY 1; ",
+            (user["ID"],) 
+        )
+        totals["difficulty_totals"] = cur.fetchall()
+
+        # get all questions answered
+        cur.execute(
+            "SELECT q.problem, q.level difficulty, uq.correct " +\
+            "FROM users_questions uq " +\
+            "JOIN questions q ON uq.questionID = q.ID " +\
+            "WHERE uq.userID = ? " +\
+            "ORDER BY uq.rowid;",
+            (user["ID"],) 
+        )
+        questions = cur.fetchall()
+
+        return make_response( jsonify({
+                "status": "success",
+                "response": "successfully retrieved users results",
+                "results": {
+                    "totals": {
+                        **totals,
+                    },
+                    "questions": questions
+                }
+            }),
+            200)
+
+    except HTTPError as err:
+        logger.error(err)
+        return make_response( jsonify({
+            "status": "error",
+            "response": err.args[0]
+        }),
+        400)
+    
+    except UnAuthError as err:
+        logger.error(err)
+        return make_response( jsonify({
+            "status": "error",
+            "response": err.args[0]
+        }),
+        401)
+    except MathFlexOperationError as err:
+        # fallback
+        logger.exception(err)
+        return make_response( jsonify({
+            "status": "error",
+            "response": err.args[0]
+        }),
+        500)
+
+    except Exception as err:
+        # fallback
+        logger.exception(err)
+        return make_response( jsonify({
+            "status": "error",
+            "response": "iternal service error, please contact an administrator."
+        }),
+        500)
