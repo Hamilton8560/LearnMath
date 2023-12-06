@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  # build frontend
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: always
+    entrypoint: ["ng", "serve", "--host", "0.0.0.0"]
+    ports:
+      - 4200:4200
+
+  # build backend
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: always
+    entrypoint: ["gunicorn", "--bind", "0.0.0.0:3000", "run:app", "--timeout 30"]
+    env_file:
+    - ./backend/.env
+    ports:
+      - 3000:3000
+    depends_on:
+    - frontend
+
+networks:
+  default:
+    name: learnmath
+
