@@ -264,13 +264,14 @@ def create_user():
         user_id = cur.fetchone()['COUNT()']
 
         cur.execute(
-            "INSERT INTO users (firstName, lastName, email, password, active) " +\
-            "VALUES(?, ?, ?, ?, ?);",
+            "INSERT INTO users (firstName, lastName, email, password, difficulty, active) " +\
+            "VALUES(?, ?, ?, ?, ?, ?);",
             (
                 str(data["firstName"]).lower(),
                 str(data["lastName"]).lower(),
                 str(data["email"]).lower(),
                 hash_password( data["password"] ),
+                1,
                 True,
             ))
         conn.commit()
