@@ -318,6 +318,93 @@ def create_user():
             "response": "iternal service error, please contact an administrator."
         }),
         500)
+    
+#/api/users/remove
+@users.route("/info", methods=["GET"])
+@cross_origin()
+def users_info():
+    """
+    Endpoint /api/users/info returns all information on a user. 
+    Accepts/returns content-type application/json; charset=utf-8.
+
+    Query Params:
+        :email (str): valid email address
+
+    Returns:
+        :status (str): success or error
+        :user (object | null): True if account is removed, else False or null if unknown
+        :response (str): response reflecting success or error of the request.
+    
+    Responses:
+        : 201 - successful request, user created
+        : 400 - invalid request, request is malformed or email syntax is invalid
+        : 401 - unauthorized
+        : 500 - server error, failure due to unknown reason
+    
+    """
+    logger.info("/api/users/info - performing lookup..")
+    try:
+        # extract data and validate
+        if "email" not in request.args:
+            raise HTTPError("Missing email or active value with request.query params.")
+        
+        if not re.match(EMAIL_REGEX, request.args["email"].lower()):
+            raise HTTPError("Invalid email address format.")
+        
+        # get user from database, validate
+        cur.execute(
+            "SELECT u.\"ID\", u.firstName, u.lastName, u.email, u.difficulty " +\
+            "FROM users u " +\
+            "WHERE lower(u.email) = lower(?);",
+            (request.args['email'],)
+        )
+        user = cur.fetchone()
+        if not user:
+            raise UnAuthError("User is not found within database")
+        
+
+        logger.info("Lookup returned user = %s", str(user))
+        return make_response( jsonify({
+            "status": "success",
+            "user": user,
+            "response": "Successful found user in database"
+        }),
+        200)
+    
+    except UnAuthError as err:
+        logger.error(err)
+        return make_response( jsonify({
+            "status": "error",
+            "user": None,
+            "response": err.args[0]
+        }),
+        401)
+    except HTTPError as err:
+        logger.error(err)
+        return make_response( jsonify({
+            "status": "error",
+            "user": None,
+            "response": err.args[0]
+        }),
+        400)
+    except JSONDecodeError as err:
+        logger.error("Invalid json format from request")
+        return make_response( jsonify({
+            "status": "error",
+            "user": None,
+            "response": "Invalid request, request.body must be json format."
+        }),
+        400)
+
+    except Exception as err:
+        # fallback
+        logger.exception(err)
+        return make_response( jsonify({
+            "status": "error",
+            "user": None,
+            "response": "iternal service error, please contact an administrator."
+        }),
+        500)
 
 #/api/users/manage  
 @users.route("/manage", methods=["POST"])
@@ -491,6 +578,8 @@ def remove_user():
             "response": "iternal service error, please contact an administrator."
         }),
         500)
+
+
 
 
 

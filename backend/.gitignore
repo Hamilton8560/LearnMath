@@ -48,4 +48,4 @@ docs/_build/
 
 # back-end logs
 .log
-.db
+#.db
