@@ -33,8 +33,8 @@ export class TestComponent implements OnInit{
       })
       this.userService.getUserdifficulty(this.userEmail).subscribe(
         (user:User) =>{
-          console.log(user)
-          this.difficulty = user.difficulty
+          console.log("user",user.user.difficulty)
+          this.difficulty = user.user.difficulty
           this.getQuestions();
         }
       )
@@ -59,7 +59,7 @@ export class TestComponent implements OnInit{
     });
   }
   getQuestions(){
-    
+    console.log("difficulty",this.difficulty)
     this.testService.getQuestions(this.userEmail,this.difficulty).subscribe(
       response => {
         
