@@ -320,15 +320,32 @@ def create_user():
         500)
     
 #/api/users/remove
-@users.route("/info", methods=["GET"])
+@users.route("/info", methods=["GET", "PATCH"])
 @cross_origin()
 def users_info():
     """
     Endpoint /api/users/info returns all information on a user. 
     Accepts/returns content-type application/json; charset=utf-8.
 
+    Method: GET
     Query Params:
         :email (str): valid email address
+
+    Returns:
+        :status (str): success or error
+        :user (object): True if account is removed, else False or null if unknown
+        :response (str): response reflecting success or error of the request.
+    
+    Responses:
+        : 201 - successful request, user created
+        : 400 - invalid request, request is malformed or email syntax is invalid
+        : 401 - unauthorized
+        : 500 - server error, failure due to unknown reason
+    
+    Method: PATCH
+    Query Params:
+        :email (str): valid email address
+        :difficulty(int): set difficulty within range of 1-8
 
     Returns:
         :status (str): success or error
@@ -342,7 +359,7 @@ def users_info():
         : 500 - server error, failure due to unknown reason
     
     """
-    logger.info("/api/users/info - performing lookup..")
+    logger.info("/api/users/info - performing action..")
     try:
         # extract data and validate
         if "email" not in request.args:
@@ -351,31 +368,58 @@ def users_info():
         if not re.match(EMAIL_REGEX, request.args["email"].lower()):
             raise HTTPError("Invalid email address format.")
         
-        # get user from database, validate
-        cur.execute(
-            "SELECT u.\"ID\", u.firstName, u.lastName, u.email, u.difficulty " +\
-            "FROM users u " +\
-            "WHERE lower(u.email) = lower(?);",
-            (request.args['email'],)
-        )
-        user = cur.fetchone()
-        if not user:
-            raise UnAuthError("User is not found within database")
-        
+        if request.method == "GET":
+            # get user from database, validate
+            cur.execute(
+                "SELECT u.\"ID\", u.firstName, u.lastName, u.email, u.difficulty " +\
+                "FROM users u " +\
+                "WHERE lower(u.email) = lower(?);",
+                (request.args['email'],)
+            )
+            user = cur.fetchone()
+            if not user:
+                raise UnAuthError("User is not found within database")
+            
 
-        logger.info("Lookup returned user = %s", str(user))
-        return make_response( jsonify({
-            "status": "success",
-            "user": user,
-            "response": "Successful found user in database"
-        }),
-        200)
+            logger.info("Lookup returned user = %s", str(user))
+            return make_response( jsonify({
+                "status": "success",
+                "user": user,
+                "response": "Successful found user in database"
+            }),
+            200)
+        
+        elif request.method == "PATCH":
+            if "difficulty" not in request.args:
+                raise HTTPError("Missing difficulty in request.query")
+            
+            if not re.match(r"^[1-8]{1}$", str(request.args["difficulty"])):
+                raise HTTPError("Difficulty must be type int and be within 1-8 range")
+
+            cur.execute(
+                "UPDATE users " +\
+                "SET difficulty = ? " +\
+                "WHERE lower(email) = lower(?);",
+                (request.args["email"], request.args["difficulty"],)
+            )
+            conn.commit()
+            logger.info("Updated %s difficulty to %s", str(request.args["email"]), str(request.args["difficulty"]))
+            return make_response( jsonify({
+                "status": "success",
+                "difficulty": int(request.args["difficulty"]),
+                "response": "Your difficulty has been set to {}".format(int(request.args["difficulty"]))
+            }),
+            200)
+        
+        else:
+            return make_response(
+            jsonify({"status": "error", "response" : "Method not allowed"}), 405
+        )
     
     except UnAuthError as err:
         logger.error(err)
         return make_response( jsonify({
             "status": "error",
-            "user": None,
             "response": err.args[0]
         }),
         401)
@@ -383,7 +427,6 @@ def users_info():
         logger.error(err)
         return make_response( jsonify({
             "status": "error",
-            "user": None,
             "response": err.args[0]
         }),
         400)
@@ -391,7 +434,6 @@ def users_info():
         logger.error("Invalid json format from request")
         return make_response( jsonify({
             "status": "error",
-            "user": None,
             "response": "Invalid request, request.body must be json format."
         }),
         400)
@@ -401,7 +443,6 @@ def users_info():
         logger.exception(err)
         return make_response( jsonify({
             "status": "error",
-            "user": None,
             "response": "iternal service error, please contact an administrator."
         }),
         500)
