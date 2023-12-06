@@ -22,7 +22,7 @@ export class UserService {
     this.difficultySource.next(difficulty);
   }
   getUserdifficulty(email){
-    const url = 'http://127.0.0.1:3000/api/users';
+    const url = 'http://127.0.0.1:3000/api/users/info';
     const params = new HttpParams().set('email', email);
     return this.http.get(url, {params})
   }
