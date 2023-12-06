@@ -7,12 +7,24 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class UserService {
   private userEmailSource = new BehaviorSubject<string | null>(localStorage.getItem('userEmail'));
+  private difficultySource = new BehaviorSubject<string | null>(localStorage.getItem('difficulty'));
+  difficulty = this.difficultySource.asObservable();
   userEmail = this.userEmailSource.asObservable();
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {}
 
   setUserEmail(email: string) {
     localStorage.setItem('userEmail', email); 
     this.userEmailSource.next(email);
+  }
+  setUserDifficulty(difficulty){
+    localStorage.setItem('difficulty', difficulty)
+    this.difficultySource.next(difficulty);
+  }
+  getUserdifficulty(email){
+    const url = 'http://127.0.0.1:3000/api/users';
+    const params = new HttpParams().set('email', email);
+    return this.http.get(url, {params})
   }
 
   checkUsername(email: string) {
@@ -20,7 +32,7 @@ export class UserService {
     const params = new HttpParams().set('email', email);
     return this.http.get(url, {params});
   }
-
+ 
   createUser(userInfo: any) {
     return this.http.post('http://127.0.0.1:3000/api/users/create', userInfo);
   }

@@ -72,7 +72,7 @@
 .separator {
     width: 95%;
     height: 2px;
-    margin: 0 auto; /* Center the container horizontally */
+    margin: 0 auto; 
     background-color: #ffffff;
 }
 

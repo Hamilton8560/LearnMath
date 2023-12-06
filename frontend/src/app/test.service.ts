@@ -12,14 +12,12 @@ export class TestService {
   constructor(private http: HttpClient) { }
 
 
-  getQuestions(){
-   
-  
+  getQuestions(user, difficulty){
     // Define the required query parameters
     const params = new HttpParams()
-      .set('email', 'david@email.com') 
+      .set('email', user) 
       .set('limit', '10') 
-      .set('difficulty', '2'); 
+      .set('difficulty', difficulty); 
   
     // Make the HTTP GET request with the specified parameters
    return this.http.get<any>(this.url, { params })

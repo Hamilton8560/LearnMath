@@ -10,7 +10,18 @@
     <form [formGroup]="testForm" (ngSubmit)="onSubmit()">
         <div *ngFor="let question of questions; let i = index" class="problem">
             <h2>{{ i + 1 }}.</h2>
-            <p>{{ question.problem }}</p>
+            <div class="hint">
+                <p>{{ question.problem }}</p>
+                <span style="cursor:pointer" (click)="toggleHint(i)">HINT</span>
+                <div *ngIf="showHint[i]">
+                    <br><br><br>
+                    <div style="display: flex; flex-direction: column;">
+                    <p *ngFor="let option of question.options; let i = index" >
+                     {{i+1}}: {{ option }}    
+                </p>
+            </div>
+                </div>
+              </div>
             <p><input type="text" placeholder="Your answer" formControlName="answer{{ i + 1 }}" /></p>
             <div class="separator"></div>
         </div>

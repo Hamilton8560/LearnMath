@@ -6,6 +6,7 @@ import { Question } from '../models/question.model';
 import { TestService } from '../test.service';
 import { UserService } from '../user.service';
 import { ResultsComponent } from '../results/results.component';
+import { User } from '../models/user.model';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
@@ -18,7 +19,8 @@ export class TestComponent implements OnInit{
   data:any;
   answered = false;
   userAnswers=[];
-
+  showHint = {};
+  difficulty
   constructor(private fb: FormBuilder, private router: Router, private http:HttpClient, private testService:TestService,
     private userService: UserService
     ) {}
@@ -29,7 +31,18 @@ export class TestComponent implements OnInit{
       {
         this.userEmail = email;
       })
+      this.userService.getUserdifficulty(this.userEmail).subscribe(
+        (user:User) =>{
+          console.log(user)
+          this.difficulty = user.difficulty
+        }
+      )
     this.getQuestions();
+
+    // Initialize showHint with false for each question
+    this.questions.forEach((_, index) => {
+      this.showHint[index] = false;
+    });
     
     this.testForm = this.fb.group({
       answer1: ['', Validators.required],
@@ -45,7 +58,8 @@ export class TestComponent implements OnInit{
     });
   }
   getQuestions(){
-    this.testService.getQuestions().subscribe(
+    
+    this.testService.getQuestions(this.userEmail,this.difficulty).subscribe(
       response => {
         
         this.questions = response.questions;
@@ -58,6 +72,10 @@ export class TestComponent implements OnInit{
     );
   }
 
+ toggleHint(index: number) {
+    this.showHint[index] = !this.showHint[index]; // Toggle hint visibility
+  }
+
   onSubmit() {
     this.answered = true;
     this.data = [];
@@ -66,7 +84,6 @@ export class TestComponent implements OnInit{
       const question = this.questions[i];
       const userAnswer = this.testForm.value['answer' + (i + 1)];
       const isCorrect = userAnswer === question.answer;
-  
       this.userAnswers.push(userAnswer); // Push each answer to userAnswers array
       console.log(this.userAnswers)
       this.data.push({
