@@ -1,13 +1,14 @@
 .container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center; 
-    min-height: 100vh; 
-    text-align: center; 
+    align-content: center;
+  
   }
   
 
-  
+
   h1 {
     font-size: 50px;
     color: #5D5D5D;
@@ -27,6 +28,7 @@
     border: 2px solid #D9D9D9;
     padding-left: 40px;
     padding-right: 40px;
+    
     
 }
 :host ::ng-deep .p-button:hover {
