@@ -35,9 +35,10 @@ export class TestComponent implements OnInit{
         (user:User) =>{
           console.log(user)
           this.difficulty = user.difficulty
+          this.getQuestions();
         }
       )
-    this.getQuestions();
+   
 
     // Initialize showHint with false for each question
     this.questions.forEach((_, index) => {
