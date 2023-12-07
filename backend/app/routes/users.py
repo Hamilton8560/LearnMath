@@ -398,11 +398,10 @@ def users_info():
                 raise HTTPError("Difficulty must be type int and be within 1-8 range")
 
             cur.execute(
-                "UPDATE users " +\
-                "SET difficulty = ? " +\
-                "WHERE lower(email) = lower(?);",
-                (request.args["email"], request.args["difficulty"],)
+                "UPDATE users SET difficulty = ? WHERE lower(email) = lower(?);",
+                (request.args["difficulty"], request.args["email"])
             )
+
             conn.commit()
             logger.info("Updated %s difficulty to %s", str(request.args["email"]), str(request.args["difficulty"]))
             return make_response( jsonify({
