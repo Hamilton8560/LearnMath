@@ -167,7 +167,7 @@ def get_questions():
             # extract data, validate email
             data = json.loads(request.data)
 
-            if "email" not in data["email"]:
+            if "email" not in data:
                 raise HTTPError("Invalid request, missing email value with request.body.")
             
             if not isinstance(data["email"], str):
