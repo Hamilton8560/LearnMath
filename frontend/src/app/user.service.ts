@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +26,11 @@ export class UserService {
     const params = new HttpParams().set('email', email);
     return this.http.get(url, {params})
   }
+  patchDifficulty(email: string, difficulty: number): Observable<any> {
+    const apiUrl = 'http://127.0.0.1:3000/api/users/info'
+      const params = new HttpParams().set('email', email).set('difficulty', difficulty.toString());
+      return this.http.patch(apiUrl, {}, { params });
+    }
 
   checkUsername(email: string) {
     const url = 'http://127.0.0.1:3000/api/users/exists';
