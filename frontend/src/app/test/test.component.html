@@ -2,8 +2,8 @@
 
 <div *ngIf="answered == false" class="container">
   <div class="title">
-    <h4>Test (Easy)</h4> 
-
+    <h4>{{userEmail}} Difficulty: {{difficulty}}</h4> 
+    <ng-template #loading>Loading...</ng-template>
   </div>
 
   <div class="problem-set">
@@ -14,12 +14,15 @@
                 <p>{{ question.problem }}</p>
                 <span style="cursor:pointer" (click)="toggleHint(i)">HINT</span>
                 <div *ngIf="showHint[i]">
-                    <br><br><br>
+
+
+                    <!--hints for individual questions-->
                     <div style="display: flex; flex-direction: column;">
-                    <p *ngFor="let option of question.options; let i = index" >
-                     {{i+1}}: {{ option }}    
-                </p>
-            </div>
+                      <p-button (click)=onClickHintAnswer(question.options[0],i)> A. {{question.options[0]}}</p-button>
+                      <p-button (click)=onClickHintAnswer(question.options[1],i)> B. {{question.options[1]}}</p-button>
+                      <p-button (click)=onClickHintAnswer(question.options[2],i)> C. {{question.options[2]}}</p-button>
+                      <p-button (click)=onClickHintAnswer(question.options[3],i)> D. {{question.options[3]}}</p-button>
+                    </div>
                 </div>
               </div>
             <p><input type="text" placeholder="Your answer" formControlName="answer{{ i + 1 }}" /></p>
@@ -33,4 +36,4 @@
   </div>
 </div>
 
-<app-results *ngIf="answered" [userAnswers]="userAnswers" [resultsData]="data"></app-results>
+<app-results *ngIf="answered" (sendDataToParent)="receiveDataFromChild()" [userEmail]="userEmail" [difficulty]="difficulty" [totalHints]="hintCount" [userAnswers]="userAnswers" [resultsData]="data"></app-results>
