@@ -1,124 +1,96 @@
-import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Question } from '../models/question.model';
 import { TestService } from '../test.service';
 import { UserService } from '../user.service';
-import { ResultsComponent } from '../results/results.component';
+import { Question } from '../models/question.model';
 import { User } from '../models/user.model';
+
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
-export class TestComponent implements OnInit{
+export class TestComponent implements OnInit {
   
   testForm: FormGroup;
-  questions: Question[]=[];
-  userEmail:string;
-  data:any;
+  questions: Question[] = [];
+  userEmail: string;
+  data: any;
   answered = false;
-  userAnswers=[];
+  userAnswers = [];
   showHint = {};
-  difficulty;
-  hintCount=0;
-  
+  difficulty: number;
+  hintCount = 0;
 
-  constructor(private fb: FormBuilder, private router: Router, private http:HttpClient, private testService:TestService,
+  constructor(
+    private fb: FormBuilder, 
+    private router: Router, 
+    private testService: TestService,
     private userService: UserService
-    ) {}
+  ) {}
 
-  
-  ngOnInit() {
-    this.userService.userEmail.subscribe(email=>
-      {
-        this.userEmail = email;
-      })
-      this.userService.getUserdifficulty(this.userEmail).subscribe(
-        (user:User) =>{
-          this.difficulty = user.user.difficulty
-          this.getQuestions();
-        }
-      )
-   
-
-    // Initialize showHint with false for each question
-    this.questions.forEach((_, index) => {
-      this.showHint[index] = false;
-    });
-    
-    this.testForm = this.fb.group({
-      answer1: ['', Validators.required],
-      answer2: ['', Validators.required],
-      answer3: ['', Validators.required],
-      answer4: ['', Validators.required],
-      answer5: ['', Validators.required],
-      answer6: ['', Validators.required],
-      answer7: ['', Validators.required],
-      answer8: ['', Validators.required],
-      answer9: ['', Validators.required],
-      answer10: ['', Validators.required]
-    });
-  }
-  getQuestions(){
-    console.log("difficulty",this.difficulty)
-    this.testService.getQuestions(this.userEmail,this.difficulty).subscribe(
-      response => {
-        
-        this.questions = response.questions;
-        
-        console.log('Questions received:', this.questions);
-      },
-      error => {
-        console.error('Error fetching questions:', error);
+  ngOnInit(): void {
+    // Subscribe to user email and difficulty
+    this.userService.userEmail.subscribe(email => this.userEmail = email);
+    this.userService.getUserdifficulty(this.userEmail).subscribe(
+      (user: User) => {
+        this.difficulty = user.user.difficulty;
+        this.getQuestions();
       }
+    );
+
+    // Initialize form with dynamic form controls
+    this.initializeForm();
+  }
+
+  private initializeForm(): void {
+    const formGroup = {};
+    for (let i = 1; i <= 10; i++) {
+      formGroup['answer' + i] = ['', Validators.required];
+    }
+    this.testForm = this.fb.group(formGroup);
+  }
+
+  private getQuestions(): void {
+    this.testService.getQuestions(this.userEmail, this.difficulty).subscribe(
+      response => {
+        this.questions = response.questions;
+        // Initialize showHint for each question
+        this.questions.forEach((_, index) => this.showHint[index] = false);
+      },
+      error => console.error('Error fetching questions:', error)
     );
   }
 
- toggleHint(index: number) {
-    //count hint for score deduction
-    if (!this.showHint[index])
-    {
-      this.hintCount++
-    }
+  toggleHint(index: number): void {
+    if (!this.showHint[index]) this.hintCount++;
     this.showHint[index] = !this.showHint[index];
-   // Toggle hint visibility
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.answered = true;
-    this.data = [];
-  
-    for (let i = 0; i < this.questions.length; i++) {
-      const question = this.questions[i];
+    this.data = this.questions.map((question, i) => {
       const userAnswer = this.testForm.value['answer' + (i + 1)];
-      const isCorrect = userAnswer === question.answer;
-      this.userAnswers.push(userAnswer); // Push each answer to userAnswers array
-      console.log(this.userAnswers)
-      this.data.push({
+      this.userAnswers.push(userAnswer);
+      return {
         email: this.userEmail,
         question: question.problem,
-        correct: isCorrect
-      });
-    }
-  
+        correct: userAnswer === question.answer
+      };
+    });
     this.testService.postQuestions(this.data);
   }
 
-
   refreshPage(): void {
-    this.router.navigate(['home'])
+    this.router.navigate(['home']);
   }
 
-  onClickHintAnswer(hint, index) {
-    const controlName = 'answer' + (index + 1);
-    this.testForm.patchValue({
-      [controlName]: hint
-    });
+  onClickHintAnswer(hint: string, index: number): void {
+    this.testForm.patchValue({ ['answer' + (index + 1)]: hint });
+  }
 
-}
-receiveDataFromChild(){
-  this.answered=!this.answered
-}
+  receiveDataFromChild(): void {
+    this.answered = !this.answered;
+  }
 }

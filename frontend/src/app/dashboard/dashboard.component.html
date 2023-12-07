@@ -3,7 +3,7 @@
   <img src="../../assets/david0409_Logo_for_adaptive_learning_mathematics_abca723d-a912-46d7-8405-77c729b0f9f7.png" alt="Logo">
    Math<span class="flex">Flex</span></h1>
 </div>
-<div class="logout">
+<div *ngIf="!isRootRoute()" class="logout">
     <a href="/">Logout</a>
 </div>
 </p-card>
