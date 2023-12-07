@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient, HttpParams } from '@angular/common/http';
@@ -13,6 +13,7 @@ import { User } from '../models/user.model';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit{
+  
   testForm: FormGroup;
   questions: Question[]=[];
   userEmail:string;
@@ -20,7 +21,10 @@ export class TestComponent implements OnInit{
   answered = false;
   userAnswers=[];
   showHint = {};
-  difficulty
+  difficulty;
+  hintCount=0;
+  
+
   constructor(private fb: FormBuilder, private router: Router, private http:HttpClient, private testService:TestService,
     private userService: UserService
     ) {}
@@ -33,7 +37,6 @@ export class TestComponent implements OnInit{
       })
       this.userService.getUserdifficulty(this.userEmail).subscribe(
         (user:User) =>{
-          console.log("user",user.user.difficulty)
           this.difficulty = user.user.difficulty
           this.getQuestions();
         }
@@ -74,7 +77,13 @@ export class TestComponent implements OnInit{
   }
 
  toggleHint(index: number) {
-    this.showHint[index] = !this.showHint[index]; // Toggle hint visibility
+    //count hint for score deduction
+    if (!this.showHint[index])
+    {
+      this.hintCount++
+    }
+    this.showHint[index] = !this.showHint[index];
+   // Toggle hint visibility
   }
 
   onSubmit() {
@@ -102,4 +111,14 @@ export class TestComponent implements OnInit{
     this.router.navigate(['home'])
   }
 
+  onClickHintAnswer(hint, index) {
+    const controlName = 'answer' + (index + 1);
+    this.testForm.patchValue({
+      [controlName]: hint
+    });
+
+}
+receiveDataFromChild(){
+  this.answered=!this.answered
+}
 }
