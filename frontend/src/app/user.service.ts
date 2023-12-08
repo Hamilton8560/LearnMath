@@ -38,6 +38,13 @@ export class UserService {
     return this.http.get(url, {params});
   }
  
+  getUser(email){
+    const url = 'http://127.0.0.1:3000//api/users/info';
+    const params= new HttpParams().set('email', email);
+    return this.http.get(url,{params});
+
+
+  }
   createUser(userInfo: any) {
     return this.http.post('http://127.0.0.1:3000/api/users/create', userInfo);
   }
