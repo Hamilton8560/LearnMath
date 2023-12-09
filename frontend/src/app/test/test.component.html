@@ -36,4 +36,5 @@
   </div>
 </div>
 
-<app-results *ngIf="answered" (sendDataToParent)="receiveDataFromChild()" [userEmail]="userEmail" [difficulty]="difficulty" [totalHints]="hintCount" [userAnswers]="userAnswers" [resultsData]="data"></app-results>
+<app-results *ngIf="answered" (dataEmitter)="toggleAnswered()" 
+ [userEmail]="userEmail" [difficulty]="difficulty" [totalHints]="hintCount" [userAnswers]="userAnswers" [resultsData]="data"></app-results>

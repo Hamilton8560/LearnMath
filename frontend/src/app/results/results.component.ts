@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { TestService } from '../test.service';
 import { UserService } from '../user.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
@@ -16,7 +16,7 @@ export class ResultsComponent implements OnInit {
   @Input() userEmail: string;
   grade: number;
 
-  constructor(private testService: TestService, private userService: UserService) {}
+  constructor(private testService: TestService, private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     this.calculateGrade();
@@ -50,7 +50,7 @@ export class ResultsComponent implements OnInit {
   }
 
   refreshPage(): void {
-    window.location.reload();
+    this.router.navigate(['test']);
   }
 
   sendDataToParent(): void {
