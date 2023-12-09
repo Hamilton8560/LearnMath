@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class TestService {
   questions:Question[]=[] 
-  url = 'http://127.0.0.1:3000/api/calls/questions';
+  url = 'https://learnmath-backend-532124fc8334.herokuapp.com/api/calls/questions';
   constructor(private http: HttpClient) { }
 
 
