@@ -93,4 +93,8 @@ export class TestComponent implements OnInit {
   receiveDataFromChild(): void {
     this.answered = !this.answered;
   }
+
+  toggleAnswered(): void {
+    this.answered = !this.answered;
+  }
 }
