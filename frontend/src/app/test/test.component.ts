@@ -99,8 +99,9 @@ export class TestComponent implements OnInit {
   }
 
   toggleAnswered(): void {
-    this.initializeDifficulty();
+    this.router.navigate(['home']);
+    /*this.initializeDifficulty();
     this.initializeForm()
-    this.answered = !this.answered;
+    this.answered = !this.answered;*/
   }
 }
