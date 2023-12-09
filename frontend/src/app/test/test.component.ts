@@ -32,6 +32,13 @@ export class TestComponent implements OnInit {
 
   ngOnInit(): void {
     // Subscribe to user email and difficulty
+    this.initializeDifficulty();
+
+    // Initialize form with dynamic form controls
+    this.initializeForm();
+  }
+
+  private initializeDifficulty(){
     this.userService.userEmail.subscribe(email => this.userEmail = email);
     this.userService.getUserdifficulty(this.userEmail).subscribe(
       (user: User) => {
@@ -39,9 +46,6 @@ export class TestComponent implements OnInit {
         this.getQuestions();
       }
     );
-
-    // Initialize form with dynamic form controls
-    this.initializeForm();
   }
 
   private initializeForm(): void {
@@ -95,6 +99,8 @@ export class TestComponent implements OnInit {
   }
 
   toggleAnswered(): void {
+    this.initializeDifficulty();
+    this.initializeForm()
     this.answered = !this.answered;
   }
 }
