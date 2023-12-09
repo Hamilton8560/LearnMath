@@ -10,7 +10,7 @@ export class UserService {
   private difficultySource = new BehaviorSubject<string | null>(localStorage.getItem('difficulty'));
   difficulty = this.difficultySource.asObservable();
   userEmail = this.userEmailSource.asObservable();
-
+  urlInfo = 'https://learnmath-backend-532124fc8334.herokuapp.com/api/users/info'
   constructor(private http: HttpClient) {}
 
   setUserEmail(email: string) {
@@ -22,34 +22,34 @@ export class UserService {
     this.difficultySource.next(difficulty);
   }
   getUserdifficulty(email){
-    const url = 'http://127.0.0.1:3000/api/users/info';
+    const url = 'https://learnmath-backend-532124fc8334.herokuapp.com/api/users/info';
     const params = new HttpParams().set('email', email);
     return this.http.get(url, {params})
   }
   patchDifficulty(email: string, difficulty: number): Observable<any> {
-    const apiUrl = 'http://127.0.0.1:3000/api/users/info'
+    const apiUrl = 'https://learnmath-backend-532124fc8334.herokuapp.com/api/users/info'
       const params = new HttpParams().set('email', email).set('difficulty', difficulty.toString());
       return this.http.patch(apiUrl, {}, { params });
     }
 
   checkUsername(email: string) {
-    const url = 'http://127.0.0.1:3000/api/users/exists';
+    const url = 'https://learnmath-backend-532124fc8334.herokuapp.com/api/users/exists';
     const params = new HttpParams().set('email', email);
     return this.http.get(url, {params});
   }
  
-  getUser(email){
-    const url = 'http://127.0.0.1:3000//api/users/info';
+  getUser(email:string){
+    const url = 'https://learnmath-backend-532124fc8334.herokuapp.com/api/users/info';
     const params= new HttpParams().set('email', email);
     return this.http.get(url,{params});
 
 
   }
   createUser(userInfo: any) {
-    return this.http.post('http://127.0.0.1:3000/api/users/create', userInfo);
+    return this.http.post('https://learnmath-backend-532124fc8334.herokuapp.com/api/users/create', userInfo);
   }
 
   authUser(loginInfo: any) {
-    return this.http.post('http://127.0.0.1:3000/api/users/auth', loginInfo)
+    return this.http.post('https://learnmath-backend-532124fc8334.herokuapp.com/api/users/auth', loginInfo)
   }
 }
