@@ -10,6 +10,9 @@ ADD requirements.txt /app
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
 
-EXPOSE 3000
+#EXPOSE 3000
+#heroku port
+EXPOSE 5000
 
-CMD ["gunicorn", "--bind", "0.0.0.0:3000", "run:app", "--timeout 30"]
+#CMD ["gunicorn", "--bind", "0.0.0.0:3000", "run:app", "--timeout 30"]
+CMD ["gunicorn", "run:app"]

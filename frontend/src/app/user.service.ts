@@ -43,6 +43,6 @@ export class UserService {
   }
 
   authUser(loginInfo: any) {
-    return this.http.post('http://127.0.0.1:3000/api/users/auth', loginInfo)
+    return this.http.post('https://learnmath-backend-532124fc8334.herokuapp.com/api/users/auth', loginInfo)
   }
 }
