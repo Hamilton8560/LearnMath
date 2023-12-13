@@ -35,7 +35,7 @@ def handle_405(err):
         )
 
 #/api/calls/questions
-@calls.route("/questions", methods=["GET", "POST"])
+@calls.route("/questions", methods=["GET", "PATCH"])
 @cross_origin()
 def get_questions():
     """
@@ -136,7 +136,8 @@ def get_questions():
             
             # modify query and args depending on parameters
             if "difficulty" not in request.args:
-                query = query.replace("AND level = ?", "")
+                logger.info("HIT")
+                query = query.replace("AND q.level = ?", "")
                 args = ( int(request.args["limit"]),)
             else:
                 args = ( int(request.args["difficulty"]), int(request.args["limit"]),)
@@ -163,7 +164,7 @@ def get_questions():
             200)
         
         # POST operations
-        elif request.method == "POST":
+        elif request.method == "PATCH":
             # extract data, validate email
             data = json.loads(request.data)
 

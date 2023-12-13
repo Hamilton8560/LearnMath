@@ -4,21 +4,26 @@ import requests
 import random
 import string
 import json
-import os
+import sqlite3
 
+# url for testing
+BASE_URL = "http://127.0.0.1:3000"
+
+# Database path, needed to generate question
+DB_PATH = "/home/cosgran/LearnMath/backend/mathflex.db"
 
 # test case for heath status
 class HealthStatusCheck(TestCase):
     # test successful response
     def test_status_codes_200(self):
-        result = requests.get("http://127.0.0.1:3000/api/health/status")
+        result = requests.get(BASE_URL + "/api/health/status")
         assert result.status_code == 200
         assert "service" in result.json()
         assert result.json()["service"] == "Running"
     
     # test not found due to incorrect url
     def test_status_codes_404(self):
-        result = requests.get("http://127.0.0.1:3000/api/health/")
+        result = requests.get(BASE_URL + "/api/health/")
         assert result.status_code == 404
         assert "status" in result.json()
         assert "response" in result.json()
@@ -27,7 +32,7 @@ class HealthStatusCheck(TestCase):
     
     # test method not allowed
     def test_status_codes_405(self):
-        result = requests.put("http://127.0.0.1:3000/api/health/status")
+        result = requests.put(BASE_URL + "/api/health/status")
         assert result.status_code == 405
         assert "status" in result.json()
         assert "response" in result.json()
@@ -56,7 +61,7 @@ class UsersCreatedCheck(TestCase):
                 + "@email.com",
             "password": "Test123!"
         })
-        result = requests.post("http://127.0.0.1:3000/api/users/create", data=data)
+        result = requests.post(BASE_URL + "/api/users/create", data=data)
         assert result.status_code == 201
         assert "status" in result.json()
         assert "created" in result.json()
@@ -70,7 +75,7 @@ class UsersCreatedCheck(TestCase):
     def test_status_codes_400(self):
         # expected fail, no body
         data = {}
-        result = requests.post("http://127.0.0.1:3000/api/users/create", data=data)
+        result = requests.post(BASE_URL + "/api/users/create", data=data)
         assert result.status_code == 400
         assert "status" in result.json()
         assert "created" in result.json()
@@ -83,7 +88,7 @@ class UsersCreatedCheck(TestCase):
         data = json.dumps({
             "test": "foo"
         })
-        result = requests.post("http://127.0.0.1:3000/api/users/create", data=data)
+        result = requests.post(BASE_URL + "/api/users/create", data=data)
         assert result.status_code == 400
         assert "status" in result.json()
         assert "created" in result.json()
@@ -99,7 +104,7 @@ class UsersCreatedCheck(TestCase):
             "email": "foo.bar",
             "password": "Test1234!"
         })
-        result = requests.post("http://127.0.0.1:3000/api/users/create", data=data)
+        result = requests.post(BASE_URL + "/api/users/create", data=data)
         assert result.status_code == 400
         assert "status" in result.json()
         assert "created" in result.json()
@@ -113,12 +118,12 @@ class UsersCreatedCheck(TestCase):
         data = json.dumps({
             "firstName": "bar",
             "lastName": "baz",
-            "email": "bar.baz" + "".join( 
-                random.sample(range(0,9), 7)) \
-                + "@email.com",
+            "email": "bar.baz" + "".join(
+                random.choice(string.digits) for _ in range(7)) \
+                    + "@email.com",
             "password": "Test1!"
         })
-        result = requests.post("http://127.0.0.1:3000/api/users/create", data=data)
+        result = requests.post(BASE_URL + "/api/users/create", data=data)
         assert result.status_code == 400
         assert "status" in result.json()
         assert "created" in result.json()
@@ -134,7 +139,7 @@ class UsersCreatedCheck(TestCase):
             "email": "bar.baz@email.com",
             "password": "Test123456789012!" # 17 chars
         })
-        result = requests.post("http://127.0.0.1:3000/api/users/create", data=data)
+        result = requests.post(BASE_URL + "/api/users/create", data=data)
         assert result.status_code == 400
         assert "status" in result.json()
         assert "created" in result.json()
@@ -150,7 +155,7 @@ class UsersCreatedCheck(TestCase):
             "email": "bar.baz@email.com",
             "password": "Test1234" # 17 chars
         })
-        result = requests.post("http://127.0.0.1:3000/api/users/create", data=data)
+        result = requests.post(BASE_URL + "/api/users/create", data=data)
         assert result.status_code == 400
         assert "status" in result.json()
         assert "created" in result.json()
@@ -166,7 +171,7 @@ class UsersCreatedCheck(TestCase):
             "email": "bar.baz@email.com",
             "password": "test123!" 
         })
-        result = requests.post("http://127.0.0.1:3000/api/users/create", data=data)
+        result = requests.post(BASE_URL + "/api/users/create", data=data)
         assert result.status_code == 400
         assert "status" in result.json()
         assert "created" in result.json()
@@ -182,7 +187,7 @@ class UsersCreatedCheck(TestCase):
             "email": "bar.baz@email.com",
             "password": "TEST123!" 
         })
-        result = requests.post("http://127.0.0.1:3000/api/users/create", data=data)
+        result = requests.post(BASE_URL + "/api/users/create", data=data)
         assert result.status_code == 400
         assert "status" in result.json()
         assert "created" in result.json()
@@ -198,7 +203,7 @@ class UsersCreatedCheck(TestCase):
             "email": "bar.baz@email.com",
             "password": "Testtest!" # 17 chars
         })
-        result = requests.post("http://127.0.0.1:3000/api/users/create", data=data)
+        result = requests.post(BASE_URL + "/api/users/create", data=data)
         assert result.status_code == 400
         assert "status" in result.json()
         assert "created" in result.json()
@@ -215,7 +220,7 @@ class UsersCreatedCheck(TestCase):
             "email": "foo.bar@email.com",
             "password": "Test123!"
         })
-        result = requests.post("http://127.0.0.1:3000/api/users/create", data=data)
+        result = requests.post(BASE_URL + "/api/users/create", data=data)
         assert result.status_code == 401
         assert "status" in result.json()
         assert "created" in result.json()
@@ -226,7 +231,7 @@ class UsersCreatedCheck(TestCase):
         
     # test not found due to incorrect url
     def test_status_codes_404(self):
-        result = requests.get("http://127.0.0.1:3000/api/users/")
+        result = requests.get(BASE_URL + "/api/users/")
         assert result.status_code == 404
         assert "status" in result.json()
         assert "response" in result.json()
@@ -235,7 +240,7 @@ class UsersCreatedCheck(TestCase):
     
     # test method not allowed
     def test_status_codes_405(self):
-        result = requests.delete("http://127.0.0.1:3000/api/users/create")
+        result = requests.delete(BASE_URL + "/api/users/create")
         assert result.status_code == 405
         assert "status" in result.json()
         assert "response" in result.json()
@@ -250,7 +255,7 @@ class CallsQuestions(TestCase):
     
     The GET method is used to retrieve questions from the database requiring email and limit within the query. 
 
-    The POST method is used to insert answered questions within the database requiring users 
+    The PATCH method is used to insert answered questions within the database requiring users 
     email address, question and correct response within database.
 
     """
@@ -261,7 +266,7 @@ class CallsQuestions(TestCase):
             "email" : "foo.bar@email.com",
             "limit": 5
         }
-        result = requests.get("http://127.0.0.1:3000/api/calls/questions", params=params)
+        result = requests.get(BASE_URL + "/api/calls/questions", params=params)
         assert result.status_code == 200
         assert "status" in result.json()
         assert "length" in result.json()
@@ -271,9 +276,34 @@ class CallsQuestions(TestCase):
         assert result.json()["length"] == params["limit"]
         assert result.json()["response"] == "successfully generated questions"
 
+    def test_status_codes_201(self):
+        # Test Post method to post insert a users answered question
+        # get a question from the db
+        conn = sqlite3.connect(DB_PATH)
+        cur = conn.cursor()
+        cur.execute("SELECT problem FROM questions WHERE ID = ?;", (random.randint(1,200),))
+        question = cur.fetchone()[0]
+        cur.close()
+        conn.close()
+
+        #patch question
+        body = json.dumps({
+            "email" : "foo.bar@email.com",
+            "question": question,
+            "correct": True
+        })
+        result = requests.patch(BASE_URL + "/api/calls/questions", data=body)
+        assert result.status_code == 201
+        assert "status" in result.json()
+        assert "updated" in result.json()
+        assert "response" in result.json()
+        assert result.json()["status"] == "success"
+        assert result.json()["updated"] is True
+        assert result.json()["response"] == "successfully updated database with users answer"
+
     # test not found due to incorrect url
     def test_status_codes_404(self):
-        result = requests.get("http://127.0.0.1:3000/api/calls/")
+        result = requests.get(BASE_URL + "/api/calls/")
         assert result.status_code == 404
         assert "status" in result.json()
         assert "response" in result.json()
@@ -282,7 +312,7 @@ class CallsQuestions(TestCase):
     
     # test method not allowed
     def test_status_codes_405(self):
-        result = requests.put("http://127.0.0.1:3000/api/calls/questions")
+        result = requests.put(BASE_URL + "/api/calls/questions")
         assert result.status_code == 405
         assert "status" in result.json()
         assert "response" in result.json()
